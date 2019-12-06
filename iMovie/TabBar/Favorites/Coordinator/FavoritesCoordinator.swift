@@ -12,16 +12,11 @@ class FavoritesCoordinator: BaseCoordinator {
     
     typealias V = FavoritesViewController
     
-    var window: UIWindow
     var view: FavoritesViewController?
     var navigation: IMNavigationViewController?
     var presentationType: PresentationType?
     
     var viewModel: FavoritesViewModel!
-    
-    required init(window: UIWindow) {
-        self.window = window
-    }
     
     func start() -> IMNavigationViewController {
         viewModel = FavoritesViewModel()

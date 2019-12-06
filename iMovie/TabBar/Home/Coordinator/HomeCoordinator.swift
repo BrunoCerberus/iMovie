@@ -12,7 +12,6 @@ class HomeCoordinator: BaseCoordinator {
     
     typealias V = HomeViewController
     
-    var window: UIWindow
     var view: HomeViewController?
     var navigation: IMNavigationViewController?
     var presentationType: PresentationType?
@@ -20,10 +19,6 @@ class HomeCoordinator: BaseCoordinator {
     
     var appDelegate: AppDelegate? {
         return UIApplication.shared.delegate as? AppDelegate
-    }
-    
-    required init(window: UIWindow) {
-        self.window = window
     }
     
     func start() -> IMNavigationViewController {

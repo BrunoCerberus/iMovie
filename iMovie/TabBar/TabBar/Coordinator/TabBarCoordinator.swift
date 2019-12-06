@@ -34,9 +34,9 @@ class TabBarCoordinator: Coordinator {
     required init(window: UIWindow) {
         self.window = window
         
-        homeCoordinator = HomeCoordinator(window: self.window)
-        favoritesCoordinator = FavoritesCoordinator(window: self.window)
-        configCoordinator = ConfigCoordinator(window: self.window)
+        homeCoordinator = HomeCoordinator()
+        favoritesCoordinator = FavoritesCoordinator()
+        configCoordinator = ConfigCoordinator()
         
         tabBar = IMTabBarController()
     }

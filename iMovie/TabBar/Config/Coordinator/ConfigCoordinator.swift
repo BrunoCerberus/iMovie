@@ -12,16 +12,11 @@ class ConfigCoordinator: BaseCoordinator {
     
     typealias V = ConfigViewController
     
-    var window: UIWindow
     var view: ConfigViewController?
     var navigation: IMNavigationViewController?
     var presentationType: PresentationType?
     
     var viewModel: ConfigViewModel!
-    
-    required init(window: UIWindow) {
-        self.window = window
-    }
     
     func start() -> IMNavigationViewController {
         viewModel = ConfigViewModel()
