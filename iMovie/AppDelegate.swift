@@ -11,11 +11,19 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    var window: UIWindow?
+    var appCoordinator: AppCoordinator!
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         KeyboardConfig.start()
+        
+        // Override point for customization after application launch.
+        window = UIWindow()
+        appCoordinator = AppCoordinator(window: window!)
+        _ = appCoordinator.start()
         
         return true
     }

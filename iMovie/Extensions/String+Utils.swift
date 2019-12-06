@@ -155,7 +155,7 @@ extension String {
 
     }
     
-    func isPSPasswordValid() -> Bool {
+    func isPasswordValid() -> Bool {
         if 8...16 ~= self.count {
             var satisfyingRules = 0
             

@@ -10,7 +10,9 @@ import UIKit
 
 extension UIColor {
     
-    public static let psBackgroundComponent = UIColor(hex6: 0xF7F5F5)
+    public static let imBackgroundComponent = UIColor(hex6: 0xF7F5F5)
+    public static let imNavigationColor = UIColor(hex6: 0xF7CE5B)
+    public static let imYellow = UIColor(hex6: 0xF7CE5B)
 
     // MARK: - Initializer
     
