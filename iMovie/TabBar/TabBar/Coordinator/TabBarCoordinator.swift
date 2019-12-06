@@ -26,8 +26,8 @@ class TabBarCoordinator: Coordinator {
     // Coordinators
     
     private var homeCoordinator: HomeCoordinator
-//    private var favoritesCoordinator: FavoritesCoordinator!
-//    private var configurationCoordinator: ConfigurationCoordinator!
+    private var favoritesCoordinator: FavoritesCoordinator!
+    private var configCoordinator: ConfigCoordinator!
     
     // Views
     
@@ -35,13 +35,17 @@ class TabBarCoordinator: Coordinator {
         self.window = window
         
         homeCoordinator = HomeCoordinator(window: self.window)
+        favoritesCoordinator = FavoritesCoordinator(window: self.window)
+        configCoordinator = ConfigCoordinator(window: self.window)
         
         tabBar = IMTabBarController()
     }
     
     func start() {
         tabBar.viewControllers = [
-            homeCoordinator.start()
+            homeCoordinator.start(),
+            favoritesCoordinator.start(),
+            configCoordinator.start()
         ]
         window.rootViewController = tabBar
     }

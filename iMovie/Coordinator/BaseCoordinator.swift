@@ -33,6 +33,9 @@ protocol BaseCoordinator: AnyObject {
     /// Associated type of UIViewController for start coordinator
     associatedtype V: UIViewController
     
+    /// Window to associate navigation
+    var window: UIWindow { get set }
+    
     /// View for start coordinator
     var view: V? { get set }
     

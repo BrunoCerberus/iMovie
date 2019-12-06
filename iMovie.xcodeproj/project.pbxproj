@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1505C5CA239AA4860025D64E /* FavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1505C5C9239AA4860025D64E /* FavoritesCoordinator.swift */; };
+		1505C5CE239AA4F40025D64E /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1505C5CD239AA4F40025D64E /* FavoritesViewModel.swift */; };
+		1505C5D5239AB2750025D64E /* ConfigCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1505C5D4239AB2750025D64E /* ConfigCoordinator.swift */; };
+		1505C5D7239AB29B0025D64E /* ConfigViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1505C5D6239AB29B0025D64E /* ConfigViewModel.swift */; };
+		1505C5DA239AB2DB0025D64E /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1505C5D8239AB2DB0025D64E /* ConfigViewController.swift */; };
+		1505C5DB239AB2DB0025D64E /* ConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1505C5D9239AB2DB0025D64E /* ConfigViewController.xib */; };
+		1505C5DE239AB2FC0025D64E /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1505C5DC239AB2FC0025D64E /* FavoritesViewController.swift */; };
+		1505C5DF239AB2FC0025D64E /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1505C5DD239AB2FC0025D64E /* FavoritesViewController.xib */; };
 		159F213623976FF300C5626F /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159F213523976FF300C5626F /* Keyboard.swift */; };
 		15BC4FD72397497400C0291F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BC4FD62397497400C0291F /* AppDelegate.swift */; };
 		15BC4FE12397497400C0291F /* iMovie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15BC4FDF2397497400C0291F /* iMovie.xcdatamodeld */; };
@@ -91,6 +99,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1505C5C9239AA4860025D64E /* FavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCoordinator.swift; sourceTree = "<group>"; };
+		1505C5CD239AA4F40025D64E /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		1505C5D4239AB2750025D64E /* ConfigCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigCoordinator.swift; sourceTree = "<group>"; };
+		1505C5D6239AB29B0025D64E /* ConfigViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewModel.swift; sourceTree = "<group>"; };
+		1505C5D8239AB2DB0025D64E /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
+		1505C5D9239AB2DB0025D64E /* ConfigViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigViewController.xib; sourceTree = "<group>"; };
+		1505C5DC239AB2FC0025D64E /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		1505C5DD239AB2FC0025D64E /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
 		159F213523976FF300C5626F /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		15BC4FD32397497400C0291F /* iMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15BC4FD62397497400C0291F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +183,81 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1505C5C5239AA4080025D64E /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				1505C5D3239AB08D0025D64E /* Network */,
+				1505C5C8239AA42C0025D64E /* View */,
+				1505C5C7239AA4240025D64E /* ViewModel */,
+				1505C5C6239AA41B0025D64E /* Coordinator */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		1505C5C6239AA41B0025D64E /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1505C5C9239AA4860025D64E /* FavoritesCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		1505C5C7239AA4240025D64E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1505C5CD239AA4F40025D64E /* FavoritesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1505C5C8239AA42C0025D64E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1505C5DC239AB2FC0025D64E /* FavoritesViewController.swift */,
+				1505C5DD239AB2FC0025D64E /* FavoritesViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1505C5CF239AAA570025D64E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		1505C5D0239AB0740025D64E /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1505C5D4239AB2750025D64E /* ConfigCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		1505C5D1239AB07D0025D64E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1505C5D6239AB29B0025D64E /* ConfigViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1505C5D2239AB0850025D64E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1505C5D8239AB2DB0025D64E /* ConfigViewController.swift */,
+				1505C5D9239AB2DB0025D64E /* ConfigViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1505C5D3239AB08D0025D64E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		15BC4FCA2397497400C0291F = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +375,7 @@
 			children = (
 				15BF99942399F1000005EB27 /* TabBar */,
 				15BF99952399F10A0005EB27 /* Home */,
+				1505C5C5239AA4080025D64E /* Favorites */,
 				15BF99962399F1100005EB27 /* Config */,
 			);
 			path = TabBar;
@@ -301,6 +393,7 @@
 		15BF99952399F10A0005EB27 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1505C5CF239AAA570025D64E /* Network */,
 				15BF99A72399F87C0005EB27 /* ViewModel */,
 				15BF99A22399F4DD0005EB27 /* View */,
 				15BF999F2399F4690005EB27 /* Coordinator */,
@@ -311,6 +404,9 @@
 		15BF99962399F1100005EB27 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				1505C5D2239AB0850025D64E /* View */,
+				1505C5D1239AB07D0025D64E /* ViewModel */,
+				1505C5D0239AB0740025D64E /* Coordinator */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -445,6 +541,8 @@
 				15BF999C2399F18D0005EB27 /* TabBarController.xib in Resources */,
 				15BF99AF2399FDA40005EB27 /* Assets.xcassets in Resources */,
 				15BF99A62399F4F50005EB27 /* HomeViewController.xib in Resources */,
+				1505C5DF239AB2FC0025D64E /* FavoritesViewController.xib in Resources */,
+				1505C5DB239AB2DB0025D64E /* ConfigViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,10 +603,13 @@
 				15BC50212397669400C0291F /* UIApplication+Utils.swift in Sources */,
 				15BC501D2397660400C0291F /* UICollectionView+Utils.swift in Sources */,
 				15BF998E2399EA270005EB27 /* UIBarButtonItem+Utils.swift in Sources */,
+				1505C5CA239AA4860025D64E /* FavoritesCoordinator.swift in Sources */,
 				15BC503623976CD200C0291F /* AlertManager.swift in Sources */,
 				15BF99AB2399F90C0005EB27 /* BaseViewController.swift in Sources */,
+				1505C5D5239AB2750025D64E /* ConfigCoordinator.swift in Sources */,
 				15BF999E2399F3720005EB27 /* TabBarCoordinator.swift in Sources */,
 				15BF99A12399F47F0005EB27 /* HomeCoordinator.swift in Sources */,
+				1505C5D7239AB29B0025D64E /* ConfigViewModel.swift in Sources */,
 				15BC4FE12397497400C0291F /* iMovie.xcdatamodeld in Sources */,
 				15BC50252397674900C0291F /* Bundle+Utils.swift in Sources */,
 				15BC502B239767DB00C0291F /* Date+Utils.swift in Sources */,
@@ -516,9 +617,12 @@
 				15BC4FD72397497400C0291F /* AppDelegate.swift in Sources */,
 				15BC5023239766B600C0291F /* URL+Utils.swift in Sources */,
 				15BC501B239763F600C0291F /* UIColor+Utils.swift in Sources */,
+				1505C5DA239AB2DB0025D64E /* ConfigViewController.swift in Sources */,
 				15BC5029239767B100C0291F /* UINavigationController+Utils.swift in Sources */,
+				1505C5CE239AA4F40025D64E /* FavoritesViewModel.swift in Sources */,
 				15BF99AD2399F9960005EB27 /* UIViewController+Utils.swift in Sources */,
 				15BF99902399EA820005EB27 /* AppCoordinator.swift in Sources */,
+				1505C5DE239AB2FC0025D64E /* FavoritesViewController.swift in Sources */,
 				15BF99B1239A028C0005EB27 /* Coordinator.swift in Sources */,
 				15BF999B2399F18D0005EB27 /* TabBarController.swift in Sources */,
 				15BF998C2399E97D0005EB27 /* IMNavigationController.swift in Sources */,
