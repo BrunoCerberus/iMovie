@@ -582,6 +582,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (

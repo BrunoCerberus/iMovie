@@ -29,7 +29,7 @@ class FavoritesCoordinator: BaseCoordinator {
         view = FavoritesViewController(viewModel: viewModel)
         
         navigation = IMNavigationViewController(rootViewController: view!)
-        navigation?.tabBarItem.image = #imageLiteral(resourceName: "TAB_HOME")
+        navigation?.tabBarItem.image = #imageLiteral(resourceName: "TAB_FAVORITE")
         navigation?.tabBarItem.title = "Favoritos"
         return navigation!
     }
