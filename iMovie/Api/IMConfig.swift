@@ -24,8 +24,8 @@ class IMConfig<T: Fetcher> {
                                   completion: ((Result<V>, URLResponse?) -> Void)?) {
         
         requestCodable(metodo: target.method,
-                       objeto: V.self,
-                       parametros: nil,
+                       objeto: dataType,
+                       parametros: try? target.task.asDictionary(),
                        url: target.path,
                        onSuccess: { response, result in
                        completion?(.success(result), response)
@@ -65,20 +65,21 @@ class IMConfig<T: Fetcher> {
                 return
             }
             
+            parameters?["api_key"] = API.ApiKey
+            
             let headers: HTTPHeaders = [
                 "Content-Type": "application/json"
             ]
             
-            //            var encoded: ParameterEncoding = JSONEncoding.default
+            var encoded: ParameterEncoding = JSONEncoding.default
             
             if metodo == .get {
-                //                encoded = URLEncoding.default
-                parameters?["api_key"] = "URLs.ApiKey"
+                encoded = URLEncoding.default
             }
             
             Alamofire.request(urlRequisicao,
                               method: metodo,
-                              parameters: parameters, encoding: URLEncoding.default, headers: headers).debugLog()
+                              parameters: parameters, encoding: encoded, headers: headers).debugLog()
                 .responseJSON { (response) in
                     
                     if debugRequests {

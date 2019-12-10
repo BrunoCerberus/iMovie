@@ -34,7 +34,7 @@ extension HomeAPI: Fetcher {
         }
     }
     
-    var task: JSONEncoder? {
+    var task: Data? {
         switch self {
         case .nowPlaying, .topRated, .popular:
             return nil
