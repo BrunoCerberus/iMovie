@@ -13,6 +13,8 @@ enum HomeAPI {
     case nowPlaying
     case topRated
     case popular
+    
+    //case nowPlaying(Film) POST Sample
 }
 
 extension HomeAPI: Fetcher {
@@ -34,10 +36,12 @@ extension HomeAPI: Fetcher {
         }
     }
     
-    var task: Data? {
+    var task: IMCodable? {
         switch self {
         case .nowPlaying, .topRated, .popular:
             return nil
+//        case .nowPlaying(let body): POST Sample
+//            return body
         }
     }
 }

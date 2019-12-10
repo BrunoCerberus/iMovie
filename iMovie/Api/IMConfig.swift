@@ -25,7 +25,7 @@ class IMConfig<T: Fetcher> {
         
         requestCodable(metodo: target.method,
                        objeto: dataType,
-                       parametros: try? target.task.asDictionary(),
+                       parametros: target.task?.dictionary() ?? [:],
                        url: target.path,
                        onSuccess: { response, result in
                        completion?(.success(result), response)
@@ -36,7 +36,7 @@ class IMConfig<T: Fetcher> {
     
     private func requestCodable<T>(metodo: HTTPMethod,
                                    objeto: T.Type,
-                                   parametros: [String: Any]? = [:],
+                                   parametros: [String: Any] = [:],
                                    token: String = "",
                                    url: String? = nil,
                                    onSuccess: @escaping (_ response: HTTPURLResponse, _ objeto: T) -> Void,
@@ -53,7 +53,7 @@ class IMConfig<T: Fetcher> {
             
             if debugRequests && metodo == .post {
                 print("\n\n===========JSON===========")
-                parametros?.printJson()
+                parametros.printJson()
                 print("===========================\n\n")
             }
             
@@ -65,7 +65,7 @@ class IMConfig<T: Fetcher> {
                 return
             }
             
-            parameters?["api_key"] = API.ApiKey
+            parameters["api_key"] = API.ApiKey
             
             let headers: HTTPHeaders = [
                 "Content-Type": "application/json"
@@ -85,7 +85,7 @@ class IMConfig<T: Fetcher> {
                     if debugRequests {
                         print("""
                             \n\nRequest: \(String(describing: response.request))
-                            \nParametros: \n\(parametros ?? [:])
+                            \nParametros: \n\(parametros)
                             \nTipo requisição:\(metodo)\n\n
                             """)
                         print(response)

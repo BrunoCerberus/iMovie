@@ -75,7 +75,6 @@
 		15BF99AD2399F9960005EB27 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BF99AC2399F9960005EB27 /* UIViewController+Utils.swift */; };
 		15BF99AF2399FDA40005EB27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15BF99AE2399FDA40005EB27 /* Assets.xcassets */; };
 		15BF99B1239A028C0005EB27 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BF99B0239A028C0005EB27 /* Coordinator.swift */; };
-		15C5A213239F51DD0048BA53 /* Encodable+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5A212239F51DD0048BA53 /* Encodable+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,7 +175,6 @@
 		15BF99AC2399F9960005EB27 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		15BF99AE2399FDA40005EB27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15BF99B0239A028C0005EB27 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		15C5A212239F51DD0048BA53 /* Encodable+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,7 +379,6 @@
 				15BF99AC2399F9960005EB27 /* UIViewController+Utils.swift */,
 				152821A9239EAC5A0063302E /* Dictionary+Utils.swift */,
 				152821AB239EAD5F0063302E /* Request+Utils.swift */,
-				15C5A212239F51DD0048BA53 /* Encodable+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -654,7 +651,6 @@
 				15BC50212397669400C0291F /* UIApplication+Utils.swift in Sources */,
 				15BC501D2397660400C0291F /* UICollectionView+Utils.swift in Sources */,
 				152821AA239EAC5A0063302E /* Dictionary+Utils.swift in Sources */,
-				15C5A213239F51DD0048BA53 /* Encodable+Utils.swift in Sources */,
 				15BF998E2399EA270005EB27 /* UIBarButtonItem+Utils.swift in Sources */,
 				1505C5CA239AA4860025D64E /* FavoritesCoordinator.swift in Sources */,
 				15BC503623976CD200C0291F /* AlertManager.swift in Sources */,

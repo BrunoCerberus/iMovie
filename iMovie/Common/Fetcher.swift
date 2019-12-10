@@ -18,5 +18,5 @@ public protocol Fetcher {
     var method: HTTPMethod { get }
     
     /// The task to be used in the request.
-    var task: Data? { get }
+    var task: IMCodable? { get }
 }
