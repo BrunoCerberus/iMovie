@@ -97,46 +97,6 @@ class AlertManager {
         alertView?.accessibilityIdentifier = "Alert_View"
         createToastAlert(buttonTitle: buttonTitle)
     }
-    
-    /// Init of normal alert type
-    ///
-    /// - Parameters:
-    ///   - title: String - The given title
-    ///   - message: String - The given message
-    init(withTitle title: String, andMessage message: String ) {
-        alertType = .normal
-        self.title = title
-        self.message = message
-        alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    }
-    
-    /// Init of normal alert type
-    ///
-    /// - Parameters:
-    ///   - title: String - The given title
-    ///   - message: String - The given message
-    ///   - alertType: AlertType - The given type of alert
-    init(with alertType: AlertType, title: String, andMessage message: String) {
-        self.alertType = alertType
-        self.title = title
-        self.message = message
-        alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    }
-    
-    /// Init of normal alert type for temporary block
-    ///
-    /// - Parameters:
-    ///   - title: String - The given title
-    ///   - message: String - The given message
-    ///   - alertType: AlertType - The given type of alert
-    ///   - blockOption: String - The button text depends on user situation
-    init(with alertType: AlertType, title: String, message: String, blockOption: String) {
-        self.alertType = alertType
-        self.title = title
-        self.message = message
-        self.blockText = blockOption
-        alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    }
 
     private func showAlertController() {
         guard let alertController = alertController, let window = UIApplication.shared.delegate?.window else {
