@@ -8,15 +8,17 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController {
+final class HomeViewController: BaseViewController {
     
     @IBOutlet weak var homeCollection: UICollectionView!
     
     var viewModel: HomeViewModel!
+    var dispatchGroup: DispatchGroup!
     
     init(viewModel: HomeViewModel) {
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
+        dispatchGroup = DispatchGroup()
         title = "Home"
     }
     
@@ -37,6 +39,7 @@ class HomeViewController: BaseViewController {
         
         self.homeCollection.delegate = self
         registerCells()
+        refreshHome()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,6 +54,44 @@ class HomeViewController: BaseViewController {
     
     private func registerCells() {
         homeCollection.register(NowPlayingCarouselCell.self)
+    }
+    
+    private func requestAll(completion: CompletionSuccess? = nil) {
+        requestNowPlaying(completion)
+        requestTopRated(completion)
+        requestPopularMovies(completion)
+    }
+    
+    private func requestNowPlaying(_ completion: CompletionSuccess? = nil) {
+        dispatchGroup.enter()
+        viewModel.requestNowPlaying {
+            self.dispatchGroup.leave()
+        }
+    }
+    
+    private func requestTopRated(_ completion: CompletionSuccess? = nil) {
+        dispatchGroup.enter()
+        viewModel.requestTopRated {
+            self.dispatchGroup.leave()
+        }
+    }
+    
+    private func requestPopularMovies(_ completion: CompletionSuccess? = nil) {
+        dispatchGroup.enter()
+        viewModel.requestPopular {
+            self.dispatchGroup.leave()
+        }
+    }
+    
+    @objc func refreshHome() {
+        
+        requestAll()
+        
+        dispatchGroup.notify(queue: .main) {
+            DispatchQueue.main.async {
+                self.homeCollection.reloadData()
+            }
+        }
     }
 }
 

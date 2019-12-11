@@ -9,6 +9,8 @@
 import Foundation
 import Alamofire
 
+typealias CompletionSuccess = (() -> Void)?
+
 #if RELEASE
 let debugRequests = false
 #else

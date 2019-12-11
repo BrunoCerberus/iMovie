@@ -22,28 +22,30 @@ class HomeViewModel {
     
     init() {
         homeService = HomeService()
-        requestNowPlaying()
     }
     
-    func requestNowPlaying() {
+    func requestNowPlaying(_ completion: CompletionSuccess) {
         homeService.getNowPlaying(onSuccess: { [weak self] films in
             self?.nowPlayingMovies = films
+            completion?()
         }, onFail: { (error) in
             print(error)
         })
     }
     
-    func requestTopRated() {
+    func requestTopRated(_ completion: CompletionSuccess) {
         homeService.getTopRated(onSuccess: { [weak self] films in
             self?.topRatedMovies = films
+            completion?()
             }, onFail: { (error) in
                 print(error)
         })
     }
     
-    func requestPopular() {
+    func requestPopular(_ completion: CompletionSuccess) {
         homeService.getPopular(onSuccess: { [weak self] films in
             self?.popularMovies = films
+            completion?()
             }, onFail: { (error) in
                 print(error)
         })
