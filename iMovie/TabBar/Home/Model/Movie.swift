@@ -41,6 +41,11 @@ struct Film: IMCodable {
     let adult: Bool?
     let overview, releaseDate: String?
     
+    var imagePath: URL? {
+        guard let backImagePath = backdropPath else { return nil }
+        return URL(string: API.baseImagesUrl + backImagePath)
+    }
+    
     enum CodingKeys: String, CodingKey {
         case voteCount = "vote_count"
         case id, video

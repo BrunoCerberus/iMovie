@@ -16,7 +16,9 @@ class HomeViewModel {
     weak var delegate: HomeViewModelDelegate?
     var homeService: HomeService!
     
-    var films: [Film]?
+    var nowPlayingMovies: [Film]?
+    var topRatedMovies: [Film]?
+    var popularMovies: [Film]?
     
     init() {
         homeService = HomeService()
@@ -25,9 +27,25 @@ class HomeViewModel {
     
     func requestNowPlaying() {
         homeService.getNowPlaying(onSuccess: { [weak self] films in
-            self?.films = films
+            self?.nowPlayingMovies = films
         }, onFail: { (error) in
             print(error)
+        })
+    }
+    
+    func requestTopRated() {
+        homeService.getTopRated(onSuccess: { [weak self] films in
+            self?.topRatedMovies = films
+            }, onFail: { (error) in
+                print(error)
+        })
+    }
+    
+    func requestPopular() {
+        homeService.getPopular(onSuccess: { [weak self] films in
+            self?.popularMovies = films
+            }, onFail: { (error) in
+                print(error)
         })
     }
 }

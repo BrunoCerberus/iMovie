@@ -19,4 +19,26 @@ class HomeService: IMConfig<HomeAPI> {
             }
         }
     }
+    
+    func getTopRated(onSuccess: @escaping ([Film]) -> Void, onFail: @escaping (String) -> Void) {
+        fetch(target: .topRated, dataType: FilmsReturn.self) { (result, _) in
+            switch result {
+            case .success(let response):
+                onSuccess(response.data ?? [Film]())
+            case .failure(let error):
+                onFail(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getPopular(onSuccess: @escaping ([Film]) -> Void, onFail: @escaping (String) -> Void) {
+        fetch(target: .popular, dataType: FilmsReturn.self) { (result, _) in
+            switch result {
+            case .success(let response):
+                onSuccess(response.data ?? [Film]())
+            case .failure(let error):
+                onFail(error.localizedDescription)
+            }
+        }
+    }
 }

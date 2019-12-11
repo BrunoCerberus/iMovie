@@ -75,6 +75,10 @@
 		15BF99AD2399F9960005EB27 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BF99AC2399F9960005EB27 /* UIViewController+Utils.swift */; };
 		15BF99AF2399FDA40005EB27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15BF99AE2399FDA40005EB27 /* Assets.xcassets */; };
 		15BF99B1239A028C0005EB27 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BF99B0239A028C0005EB27 /* Coordinator.swift */; };
+		15F5F79B23A0883C00909C2F /* NowPlayingCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F5F79923A0883C00909C2F /* NowPlayingCarouselCell.swift */; };
+		15F5F79C23A0883C00909C2F /* NowPlayingCarouselCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15F5F79A23A0883C00909C2F /* NowPlayingCarouselCell.xib */; };
+		15F5F79F23A0912900909C2F /* HeaderMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F5F79D23A0912900909C2F /* HeaderMovieCell.swift */; };
+		15F5F7A023A0912900909C2F /* HeaderMovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15F5F79E23A0912900909C2F /* HeaderMovieCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +179,10 @@
 		15BF99AC2399F9960005EB27 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		15BF99AE2399FDA40005EB27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15BF99B0239A028C0005EB27 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		15F5F79923A0883C00909C2F /* NowPlayingCarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingCarouselCell.swift; sourceTree = "<group>"; };
+		15F5F79A23A0883C00909C2F /* NowPlayingCarouselCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NowPlayingCarouselCell.xib; sourceTree = "<group>"; };
+		15F5F79D23A0912900909C2F /* HeaderMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderMovieCell.swift; sourceTree = "<group>"; };
+		15F5F79E23A0912900909C2F /* HeaderMovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderMovieCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -485,6 +493,7 @@
 		15BF99A22399F4DD0005EB27 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				15F5F79823A0880D00909C2F /* Cells */,
 				15BF99A32399F4F50005EB27 /* HomeViewController.swift */,
 				15BF99A42399F4F50005EB27 /* HomeViewController.xib */,
 			);
@@ -497,6 +506,17 @@
 				15BF99A82399F88C0005EB27 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		15F5F79823A0880D00909C2F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				15F5F79923A0883C00909C2F /* NowPlayingCarouselCell.swift */,
+				15F5F79A23A0883C00909C2F /* NowPlayingCarouselCell.xib */,
+				15F5F79D23A0912900909C2F /* HeaderMovieCell.swift */,
+				15F5F79E23A0912900909C2F /* HeaderMovieCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -586,7 +606,9 @@
 				15BC4FE62397497500C0291F /* LaunchScreen.storyboard in Resources */,
 				15BF999C2399F18D0005EB27 /* TabBarController.xib in Resources */,
 				15BF99AF2399FDA40005EB27 /* Assets.xcassets in Resources */,
+				15F5F79C23A0883C00909C2F /* NowPlayingCarouselCell.xib in Resources */,
 				15BF99A62399F4F50005EB27 /* HomeViewController.xib in Resources */,
+				15F5F7A023A0912900909C2F /* HeaderMovieCell.xib in Resources */,
 				1505C5DF239AB2FC0025D64E /* FavoritesViewController.xib in Resources */,
 				1505C5DB239AB2DB0025D64E /* ConfigViewController.xib in Resources */,
 			);
@@ -647,6 +669,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				152821BC239EBF920063302E /* Movie.swift in Sources */,
+				15F5F79B23A0883C00909C2F /* NowPlayingCarouselCell.swift in Sources */,
 				15BF99A52399F4F50005EB27 /* HomeViewController.swift in Sources */,
 				15BC50212397669400C0291F /* UIApplication+Utils.swift in Sources */,
 				15BC501D2397660400C0291F /* UICollectionView+Utils.swift in Sources */,
@@ -654,6 +677,7 @@
 				15BF998E2399EA270005EB27 /* UIBarButtonItem+Utils.swift in Sources */,
 				1505C5CA239AA4860025D64E /* FavoritesCoordinator.swift in Sources */,
 				15BC503623976CD200C0291F /* AlertManager.swift in Sources */,
+				15F5F79F23A0912900909C2F /* HeaderMovieCell.swift in Sources */,
 				152821C0239ED44D0063302E /* BaseService.swift in Sources */,
 				15BF99AB2399F90C0005EB27 /* BaseViewController.swift in Sources */,
 				1505C5D5239AB2750025D64E /* ConfigCoordinator.swift in Sources */,

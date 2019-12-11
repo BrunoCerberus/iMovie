@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NowPlayingCarouselCell" id="v4v-bO-aA9" userLabel="NowPlayingCarouselCell" customClass="NowPlayingCarouselCell" customModule="iMovie" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="360" height="200"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPG-6p-x2C">
+                        <rect key="frame" x="0.0" y="0.0" width="360" height="200"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="DO6-hh-B4W">
+                                <rect key="frame" x="0.0" y="0.0" width="360" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="8" id="byK-kx-aQa">
+                                    <size key="itemSize" width="312" height="120"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <connections>
+                                    <outlet property="dataSource" destination="-1" id="wBf-c3-BsD"/>
+                                    <outlet property="delegate" destination="-1" id="uQ9-4d-8Kd"/>
+                                </connections>
+                            </collectionView>
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="lJz-ZX-ezN">
+                                <rect key="frame" x="160.5" y="163" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="DO6-hh-B4W" secondAttribute="bottom" id="5gc-QS-57a"/>
+                            <constraint firstAttribute="bottom" secondItem="lJz-ZX-ezN" secondAttribute="bottom" id="SbP-5n-BV8"/>
+                            <constraint firstAttribute="trailing" secondItem="DO6-hh-B4W" secondAttribute="trailing" id="onQ-Jk-UeJ"/>
+                            <constraint firstItem="DO6-hh-B4W" firstAttribute="top" secondItem="OPG-6p-x2C" secondAttribute="top" id="oqI-Zw-tEc"/>
+                            <constraint firstItem="lJz-ZX-ezN" firstAttribute="centerX" secondItem="OPG-6p-x2C" secondAttribute="centerX" id="osM-yc-sDC"/>
+                            <constraint firstItem="DO6-hh-B4W" firstAttribute="leading" secondItem="OPG-6p-x2C" secondAttribute="leading" id="wX2-ii-Q63"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="OPG-6p-x2C" firstAttribute="top" secondItem="v4v-bO-aA9" secondAttribute="top" id="31s-2e-ZQ0"/>
+                <constraint firstItem="OPG-6p-x2C" firstAttribute="leading" secondItem="v4v-bO-aA9" secondAttribute="leading" id="7DH-B4-XXb"/>
+                <constraint firstItem="OPG-6p-x2C" firstAttribute="top" secondItem="v4v-bO-aA9" secondAttribute="top" id="9SX-KJ-Brz"/>
+                <constraint firstAttribute="bottom" secondItem="OPG-6p-x2C" secondAttribute="bottom" id="YcK-6y-1HI"/>
+                <constraint firstAttribute="bottom" secondItem="OPG-6p-x2C" secondAttribute="bottom" id="goD-iS-wKz"/>
+                <constraint firstAttribute="trailing" secondItem="OPG-6p-x2C" secondAttribute="trailing" id="wnI-nL-Sry"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Uts-FI-jF8"/>
+            <connections>
+                <outlet property="carouselCollection" destination="DO6-hh-B4W" id="UvE-Vn-O0e"/>
+            </connections>
+            <point key="canvasLocation" x="2.8985507246376816" y="31.808035714285712"/>
+        </collectionViewCell>
+    </objects>
+</document>

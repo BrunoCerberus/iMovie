@@ -36,6 +36,7 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
         
         self.homeCollection.delegate = self
+        registerCells()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,17 +48,24 @@ class HomeViewController: BaseViewController {
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
+    
+    private func registerCells() {
+        homeCollection.register(NowPlayingCarouselCell.self)
+    }
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        return collectionView.dequeueReusableCell(of: NowPlayingCarouselCell.self, for: indexPath) { cell in
+            guard let nowPlayingMovies = self.viewModel.nowPlayingMovies else { return }
+            cell.setup(nowPlayingMovies)
+        }
     }
 }
 
@@ -66,13 +74,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 50, height: 100)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        return CGSize(width: collectionView.frame.width, height: 200)
     }
 }
