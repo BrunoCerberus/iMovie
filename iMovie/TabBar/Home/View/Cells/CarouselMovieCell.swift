@@ -9,12 +9,12 @@
 import UIKit
 
 protocol NowPlayingCarouselDelegate: AnyObject {
-    func didSelectMovie(_ carouselView: NowPlayingCarouselCell, movie: Film?)
+    func didSelectMovie(_ carouselView: CarouselMovieCell, movie: Film?)
 }
 
-class NowPlayingCarouselCell: UICollectionViewCell {
+class CarouselMovieCell: UICollectionViewCell {
     
-    @IBOutlet weak var carouselCollection: UICollectionView!
+    @IBOutlet var carousel: UICollectionView!
     
     weak var delegate: NowPlayingCarouselDelegate?
     var carouselMovies: [Film]?
@@ -22,18 +22,18 @@ class NowPlayingCarouselCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        carouselCollection.delegate = self
-        carouselCollection.dataSource = self
-        carouselCollection.register(HeaderMovieCell.self)
+        carousel.delegate = self
+        carousel.dataSource = self
+        carousel.register(HeaderMovieCell.self)
     }
     
     func setup(_ movies: [Film]) {
         carouselMovies = movies
-        carouselCollection.reloadData()
+        carousel.reloadData()
     }
 }
 
-extension NowPlayingCarouselCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension CarouselMovieCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         return carouselMovies?.count ?? 0
@@ -52,7 +52,7 @@ extension NowPlayingCarouselCell: UICollectionViewDelegate, UICollectionViewData
     }
 }
 
-extension NowPlayingCarouselCell: UICollectionViewDelegateFlowLayout {
+extension CarouselMovieCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,

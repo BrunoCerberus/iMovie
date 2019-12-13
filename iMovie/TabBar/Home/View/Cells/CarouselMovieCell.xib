@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NowPlayingCarouselCell" id="v4v-bO-aA9" userLabel="NowPlayingCarouselCell" customClass="NowPlayingCarouselCell" customModule="iMovie" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CarouselMovieCell" id="v4v-bO-aA9" userLabel="CarouselMovieCell" customClass="CarouselMovieCell" customModule="iMovie" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="360" height="200"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -31,10 +31,6 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <connections>
-                                    <outlet property="dataSource" destination="-1" id="wBf-c3-BsD"/>
-                                    <outlet property="delegate" destination="-1" id="uQ9-4d-8Kd"/>
-                                </connections>
                             </collectionView>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="lJz-ZX-ezN">
                                 <rect key="frame" x="160.5" y="163" width="39" height="37"/>
@@ -64,7 +60,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="Uts-FI-jF8"/>
             <connections>
-                <outlet property="carouselCollection" destination="DO6-hh-B4W" id="UvE-Vn-O0e"/>
+                <outlet property="carousel" destination="DO6-hh-B4W" id="Mrm-8b-n2a"/>
             </connections>
             <point key="canvasLocation" x="2.8985507246376816" y="31.808035714285712"/>
         </collectionViewCell>

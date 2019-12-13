@@ -53,7 +53,7 @@ final class HomeViewController: BaseViewController {
     }
     
     private func registerCells() {
-        homeCollection.register(NowPlayingCarouselCell.self)
+        homeCollection.register(CarouselMovieCell.self)
     }
     
     private func requestAll(completion: CompletionSuccess? = nil) {
@@ -103,7 +103,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(of: NowPlayingCarouselCell.self, for: indexPath) { cell in
+        return collectionView.dequeueReusableCell(of: CarouselMovieCell.self, for: indexPath) { cell in
             guard let nowPlayingMovies = self.viewModel.nowPlayingMovies else { return }
             cell.setup(nowPlayingMovies)
         }
