@@ -67,7 +67,7 @@ extension CarouselMovieCell: UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        delegate?.didSelectMovie(self, movie: nil)
+        delegate?.didSelectMovie(self, movie: carouselMovies?[indexPath.row])
     }
 }
 

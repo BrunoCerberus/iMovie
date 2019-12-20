@@ -11,9 +11,13 @@ import UIKit
 final class HomeViewController: BaseViewController {
     
     @IBOutlet weak var homeCollection: UICollectionView!
+    @IBOutlet weak var homeFlow: UICollectionViewFlowLayout!
+    @IBOutlet weak var backgroundTop: UIView!
+    @IBOutlet weak var pullAreaConstraint: NSLayoutConstraint!
     
-    var viewModel: HomeViewModel!
-    var dispatchGroup: DispatchGroup!
+    private var viewModel: HomeViewModel!
+    private var dispatchGroup: DispatchGroup!
+    private var refreshControl: UIRefreshControl!
     
     init(viewModel: HomeViewModel) {
         super.init(nibName: nil, bundle: nil)
@@ -37,9 +41,7 @@ final class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.homeCollection.delegate = self
-        registerCells()
-        refreshHome()
+        setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +52,17 @@ final class HomeViewController: BaseViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
+    private func setup() {
+        registerCells()
+        addRefreshControl()
+        
+        if Device.size() >= .screen5_8Inch || Device.size() == .unknownSize {
+            pullAreaConstraint.constant = 44
+        }
+        
+        refreshHome()
     }
     
     private func registerCells() {
@@ -83,12 +96,37 @@ final class HomeViewController: BaseViewController {
         }
     }
     
-    @objc func refreshHome() {
+    func showNetworkOperation(_ show: Bool) {
+        DispatchQueue.main.async {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = show
+        }
+    }
+    
+    private func addRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl.backgroundColor = .clear
+        refreshControl.tintColor       = .clear
+        refreshControl.addTarget(self, action: #selector(refreshHome), for: .valueChanged)
+        self.homeCollection.insertSubview(refreshControl, at: 0)
         
+        let screen = UIScreen.main.bounds
+        let activityIndicator = NVActivityIndicatorView(frame: CGRect(x: screen.width / 2 - 12.5,
+                                                                      y: 0,
+                                                                      width: 25.0,
+                                                                      height: 25.0))
+        activityIndicator.type = .ballClipRotate
+        activityIndicator.startAnimating()
+        refreshControl.subviews[0].addSubview(activityIndicator)
+    }
+    
+    @objc func refreshHome() {
+        self.showNetworkOperation(true)
         requestAll()
         
         dispatchGroup.notify(queue: .main) {
+            self.showNetworkOperation(false)
             DispatchQueue.main.async {
+                self.refreshControl.endRefreshing()
                 self.homeCollection.reloadData()
             }
         }
@@ -96,6 +134,10 @@ final class HomeViewController: BaseViewController {
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         return 1
@@ -103,9 +145,20 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(of: CarouselMovieCell.self, for: indexPath) { cell in
-            guard let nowPlayingMovies = self.viewModel.nowPlayingMovies else { return }
-            cell.setup(nowPlayingMovies)
+        let section = HomeSections(rawValue: indexPath.section)
+        switch section {
+        case .nowPlaying:
+            return collectionView.dequeueReusableCell(of: CarouselMovieCell.self, for: indexPath) { cell in
+                guard let nowPlayingMovies = self.viewModel.nowPlayingMovies else { return }
+                cell.setup(nowPlayingMovies)
+            }
+        case .topRated:
+            return UICollectionViewCell()
+            
+        case .popular:
+            return UICollectionViewCell()
+        case .none:
+            return UICollectionViewCell()
         }
     }
 }
@@ -123,5 +176,16 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+}
+
+extension HomeViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = -scrollView.contentOffset.y
+        if offset >= 0 {
+            backgroundTop.transform = .init(translationX: 0, y: offset)
+        } else {
+            backgroundTop.transform = .init(translationX: 0, y: 0)
+        }
     }
 }
