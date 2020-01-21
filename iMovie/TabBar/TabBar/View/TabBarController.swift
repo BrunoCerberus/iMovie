@@ -30,7 +30,7 @@ class TabBarController: UITabBarController {
     
     // MARK: - Internal Methods
     func setup() {
-        tabBar.tintColor = .imYellow
+        tabBar.tintColor = .imNavigationColor
         tabBar.backgroundColor = .white
         edgesForExtendedLayout = []
         extendedLayoutIncludesOpaqueBars = false
