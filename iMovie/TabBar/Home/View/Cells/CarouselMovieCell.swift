@@ -20,10 +20,9 @@ class CarouselMovieCell: UICollectionViewCell {
     
     weak var delegate: NowPlayingCarouselDelegate?
     var carouselMovies: [Film]?
+    var carouseType: CarouselType = .nowPlaying
     
     var edgeCellDistance: CGFloat = 0
-    private var indexOfCellBeforeDragging = 0
-    private let swipeVelocityThreshold: CGFloat = 0.5
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,6 +36,12 @@ class CarouselMovieCell: UICollectionViewCell {
         carouselMovies = movies
         pageControl.numberOfPages = movies.count
         carousel.reloadData()
+        
+        if carouseType == .topRated {
+            pageControl.isHidden = true
+            carousel.isPagingEnabled = false
+            carousel.bounces = true
+        }
     }
     
     /// Return index of main cell collection
@@ -76,48 +81,23 @@ extension CarouselMovieCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 200)
+        switch carouseType {
+        case .nowPlaying:
+            return CGSize(width: collectionView.frame.width, height: 200)
+        case .topRated:
+            return CGSize(width: 140, height: 180)
+        }
     }
     
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-           indexOfCellBeforeDragging = indexOfMainCell()
-       }
-    
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView,
-                                   withVelocity velocity: CGPoint,
-                                   targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        // Animation of card transition effect in scroolView.
-        targetContentOffset.pointee = scrollView.contentOffset
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        let indexOfMainCell = self.indexOfMainCell()
-        
-        let dataSourceCount = collectionView(carousel!,
-                                             numberOfItemsInSection: carousel.numberOfItems(inSection: 0))
-        
-        let hasVelocityToSlideToTheNextCell = indexOfCellBeforeDragging + 1
-            < dataSourceCount && velocity.x > swipeVelocityThreshold
-        
-        let hasVelocityToSlideToThePreviousCell = indexOfCellBeforeDragging - 1
-            >= 0 && velocity.x < -swipeVelocityThreshold
-        
-        let majorCellIsTheCellBeforeDragging = indexOfMainCell == indexOfCellBeforeDragging
-        
-        let didUseSwipeToSkipCell = majorCellIsTheCellBeforeDragging &&
-            (hasVelocityToSlideToTheNextCell || hasVelocityToSlideToThePreviousCell)
-        
-        if didUseSwipeToSkipCell {
-            
-            let snapToIndex = indexOfCellBeforeDragging + (hasVelocityToSlideToTheNextCell ? 1 : -1)
-            
-            let indexPath = IndexPath(row: snapToIndex, section: 0)
-            pageControl.currentPage = snapToIndex
-            collectionViewLayout.collectionView!.scrollToItem(at: indexPath,
-                                                              at: .centeredHorizontally, animated: true)
-        } else {
-            
-            let indexPath = IndexPath(row: indexOfMainCell, section: 0)
-            pageControl.currentPage = indexPath.row
-            collectionViewLayout.collectionView!.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        switch carouseType {
+        case .nowPlaying:
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        case .topRated:
+            return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         }
     }
 }

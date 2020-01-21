@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum CarouselType: Int {
+    case nowPlaying
+    case topRated
+}
+
 struct FilmsReturn: IMCodable {
     let data: [Film]?
     let page, totalResults: Int?
@@ -41,9 +46,14 @@ struct Film: IMCodable {
     let adult: Bool?
     let overview, releaseDate: String?
     
-    var imagePath: URL? {
+    var backdropImagePath: URL? {
         guard let backImagePath = backdropPath else { return nil }
         return URL(string: API.baseImagesUrl + backImagePath)
+    }
+    
+    var posterImagePath: URL? {
+        guard let posterImagePath = posterPath else { return nil }
+        return URL(string: API.baseImagesUrl + posterImagePath)
     }
     
     enum CodingKeys: String, CodingKey {

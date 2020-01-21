@@ -57,6 +57,7 @@ final class HomeViewController: BaseViewController {
     
     private func registerCells() {
         homeCollection.register(CarouselMovieCell.self)
+        homeCollection.register(HeaderMovieCell.self)
     }
     
     private func requestAll(completion: CompletionSuccess? = nil) {
@@ -125,12 +126,20 @@ final class HomeViewController: BaseViewController {
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return HomeSections.count
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
-        return 1
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let sec = HomeSections(rawValue: section) else { return 0 }
+        
+        switch sec {
+        case .nowPlaying:
+            return 1
+        case .topRated:
+            return 1
+        case .popular:
+            return viewModel.popularMovies?.count ?? 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -143,10 +152,17 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 cell.setup(nowPlayingMovies)
             }
         case .topRated:
-            return UICollectionViewCell()
+            return collectionView.dequeueReusableCell(of: CarouselMovieCell.self, for: indexPath) { [weak self] cell in
+                guard let topRatedMovies = self?.viewModel.topRatedMovies else { return }
+                cell.carouseType = .topRated
+                cell.setup(topRatedMovies)
+            }
             
         case .popular:
-            return UICollectionViewCell()
+            return collectionView.dequeueReusableCell(of: HeaderMovieCell.self, for: indexPath) { [weak self] cell in
+                guard let popularMovies = self?.viewModel.popularMovies else { return }
+                cell.setup(popularMovies[indexPath.row])
+            }
         case .none:
             return UICollectionViewCell()
         }
@@ -158,14 +174,44 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 200)
+        let sec = HomeSections(rawValue: indexPath.section)
+        switch sec {
+        case .nowPlaying:
+            return CGSize(width: collectionView.frame.width, height: 200)
+        case .topRated:
+            return CGSize(width: collectionView.frame.width, height: 180)
+        case .popular:
+            return CGSize(width: (collectionView.frame.width - 120) / 2, height: 200)
+        default:
+            return CGSize(width: 0, height: 0)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
+        guard let sec = HomeSections(rawValue: section) else { return .zero }
         
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        switch sec {
+        case .popular:
+            return UIEdgeInsets(top: 0, left: 40, bottom: 24, right: 40)
+        default:
+            return UIEdgeInsets(top: 0, left: 0, bottom: 24, right: 0)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        guard let sec = HomeSections(rawValue: section) else { return .zero }
+        
+        switch sec {
+        case .popular:
+            return 10
+        default:
+            return 0
+        }
     }
 }
 
