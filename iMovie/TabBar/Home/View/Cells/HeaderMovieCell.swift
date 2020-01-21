@@ -14,6 +14,6 @@ class HeaderMovieCell: UICollectionViewCell {
     @IBOutlet weak var movieImage: UIImageView!
     
     func setup(_ movie: Film) {
-        movieImage.kf.setImage(with: movie.imagePath)
+        movieImage.kf.setImage(with: movie.backdropImagePath)
     }
 }
