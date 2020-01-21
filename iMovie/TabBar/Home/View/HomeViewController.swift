@@ -44,16 +44,6 @@ final class HomeViewController: BaseViewController {
         setup()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(false, animated: false)
-    }
-    
     private func setup() {
         registerCells()
         addRefreshControl()
@@ -148,8 +138,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         let section = HomeSections(rawValue: indexPath.section)
         switch section {
         case .nowPlaying:
-            return collectionView.dequeueReusableCell(of: CarouselMovieCell.self, for: indexPath) { cell in
-                guard let nowPlayingMovies = self.viewModel.nowPlayingMovies else { return }
+            return collectionView.dequeueReusableCell(of: CarouselMovieCell.self, for: indexPath) { [weak self] cell in
+                guard let nowPlayingMovies = self?.viewModel.nowPlayingMovies else { return }
                 cell.setup(nowPlayingMovies)
             }
         case .topRated:
