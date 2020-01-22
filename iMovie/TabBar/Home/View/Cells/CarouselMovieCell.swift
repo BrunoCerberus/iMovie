@@ -32,6 +32,15 @@ class CarouselMovieCell: UICollectionViewCell {
         carousel.register(HeaderMovieCell.self)
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        pageControl.isHidden = false
+        carousel.isPagingEnabled = true
+        carousel.bounces = true
+        carouseType = .nowPlaying
+    }
+    
     func setup(_ movies: [Film]) {
         carouselMovies = movies
         pageControl.numberOfPages = movies.count
@@ -100,4 +109,5 @@ extension CarouselMovieCell: UICollectionViewDelegateFlowLayout {
             return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         }
     }
+    
 }

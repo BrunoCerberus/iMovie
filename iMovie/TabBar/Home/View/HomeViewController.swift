@@ -181,7 +181,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         case .topRated:
             return CGSize(width: collectionView.frame.width, height: 180)
         case .popular:
-            return CGSize(width: (collectionView.frame.width - 120) / 2, height: 200)
+            return CGSize(width: (collectionView.frame.width - 30) / 3, height: 200)
         default:
             return CGSize(width: 0, height: 0)
         }
@@ -194,7 +194,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         
         switch sec {
         case .popular:
-            return UIEdgeInsets(top: 0, left: 40, bottom: 24, right: 40)
+            return UIEdgeInsets(top: 0, left: 10, bottom: 24, right: 10)
         default:
             return UIEdgeInsets(top: 0, left: 0, bottom: 24, right: 0)
         }
