@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol NowPlayingCarouselDelegate: AnyObject {
+protocol CarouselMovieDelegate: AnyObject {
     func didSelectMovie(_ carouselView: CarouselMovieCell, movie: Film?)
 }
 
@@ -18,7 +18,7 @@ class CarouselMovieCell: UICollectionViewCell {
     @IBOutlet weak var collectionViewLayout: UICollectionViewFlowLayout!
     @IBOutlet weak var pageControl: UIPageControl!
     
-    weak var delegate: NowPlayingCarouselDelegate?
+    weak var delegate: CarouselMovieDelegate?
     var carouselMovies: [Film]?
     var carouseType: CarouselType = .nowPlaying
     

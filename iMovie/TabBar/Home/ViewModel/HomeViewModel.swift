@@ -9,7 +9,7 @@
 import Foundation
 
 protocol HomeViewModelDelegate: AnyObject {
-    
+    func homeViewModelDidSelectMovie(_ viewModel: HomeViewModel, movie: Film)
 }
 
 class HomeViewModel {
@@ -49,5 +49,10 @@ class HomeViewModel {
             }, onFail: { (error) in
                 print(error)
         })
+    }
+    
+    func didSelectMovie(_ movie: Film?) {
+        guard let movie = movie else { return }
+        delegate?.homeViewModelDidSelectMovie(self, movie: movie)
     }
 }

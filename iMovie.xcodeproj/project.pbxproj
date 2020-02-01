@@ -82,6 +82,8 @@
 		1569A1AE23AC7D07007AECA6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1569A19D23AC7D07007AECA6 /* Images.xcassets */; };
 		1569A1AF23AC7D07007AECA6 /* PKHUDSquareBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569A19E23AC7D07007AECA6 /* PKHUDSquareBaseView.swift */; };
 		1569A1B023AC7D07007AECA6 /* PKHUDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569A19F23AC7D07007AECA6 /* PKHUDErrorView.swift */; };
+		1579C0CB23E5F1A40036A715 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579C0C923E5F1A40036A715 /* MovieDetailViewController.swift */; };
+		1579C0CC23E5F1A40036A715 /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1579C0CA23E5F1A40036A715 /* MovieDetailViewController.xib */; };
 		159F213623976FF300C5626F /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159F213523976FF300C5626F /* Keyboard.swift */; };
 		15BC4FD72397497400C0291F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BC4FD62397497400C0291F /* AppDelegate.swift */; };
 		15BC4FE12397497400C0291F /* iMovie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15BC4FDF2397497400C0291F /* iMovie.xcdatamodeld */; };
@@ -243,6 +245,8 @@
 		1569A19D23AC7D07007AECA6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1569A19E23AC7D07007AECA6 /* PKHUDSquareBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSquareBaseView.swift; sourceTree = "<group>"; };
 		1569A19F23AC7D07007AECA6 /* PKHUDErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDErrorView.swift; sourceTree = "<group>"; };
+		1579C0C923E5F1A40036A715 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		1579C0CA23E5F1A40036A715 /* MovieDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailViewController.xib; sourceTree = "<group>"; };
 		159F213523976FF300C5626F /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		15BC4FD32397497400C0291F /* iMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15BC4FD62397497400C0291F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -696,6 +700,8 @@
 				15F5F79823A0880D00909C2F /* Cells */,
 				15BF99A32399F4F50005EB27 /* HomeViewController.swift */,
 				15BF99A42399F4F50005EB27 /* HomeViewController.xib */,
+				1579C0C923E5F1A40036A715 /* MovieDetailViewController.swift */,
+				1579C0CA23E5F1A40036A715 /* MovieDetailViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -803,6 +809,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1579C0CC23E5F1A40036A715 /* MovieDetailViewController.xib in Resources */,
 				1569A1AE23AC7D07007AECA6 /* Images.xcassets in Resources */,
 				15BC4FE62397497500C0291F /* LaunchScreen.storyboard in Resources */,
 				15BF999C2399F18D0005EB27 /* TabBarController.xib in Resources */,
@@ -891,6 +898,7 @@
 				15BC503623976CD200C0291F /* AlertManager.swift in Sources */,
 				1569A17623AC73B4007AECA6 /* NVActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				152821C0239ED44D0063302E /* BaseService.swift in Sources */,
+				1579C0CB23E5F1A40036A715 /* MovieDetailViewController.swift in Sources */,
 				1569A16F23AC73B4007AECA6 /* NVActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				1569A1A523AC7D07007AECA6 /* PKHUDSuccessView.swift in Sources */,
 				15BF99AB2399F90C0005EB27 /* BaseViewController.swift in Sources */,

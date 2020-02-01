@@ -21,6 +21,9 @@ class HomeCoordinator: BaseCoordinator {
         return UIApplication.shared.delegate as? AppDelegate
     }
     
+    // MARK: Controllers
+    private var detailViewController: MovieDetailViewController!
+    
     func start() -> IMNavigationViewController {
         viewModel = HomeViewModel()
         viewModel.delegate = self
@@ -37,8 +40,16 @@ class HomeCoordinator: BaseCoordinator {
         navigation = nil
         presentationType = nil
     }
+    
+    func showMovieDetail(_ movie: Film) {
+        guard let navigationController = navigation else { return }
+        detailViewController = MovieDetailViewController(movie)
+        navigationController.pushViewController(detailViewController, animated: true)
+    }
 }
 
 extension HomeCoordinator: HomeViewModelDelegate {
-    
+    func homeViewModelDidSelectMovie(_ viewModel: HomeViewModel, movie: Film) {
+        showMovieDetail(movie)
+    }
 }

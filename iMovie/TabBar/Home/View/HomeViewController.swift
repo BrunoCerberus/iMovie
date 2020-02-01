@@ -122,6 +122,10 @@ final class HomeViewController: BaseViewController {
             }
         }
     }
+    
+    private func didSelectMovie(_ movie: Film?) {
+        viewModel.didSelectMovie(movie)
+    }
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -149,11 +153,13 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         case .nowPlaying:
             return collectionView.dequeueReusableCell(of: CarouselMovieCell.self, for: indexPath) { [weak self] cell in
                 guard let nowPlayingMovies = self?.viewModel.nowPlayingMovies else { return }
+                cell.delegate = self
                 cell.setup(nowPlayingMovies)
             }
         case .topRated:
             return collectionView.dequeueReusableCell(of: CarouselMovieCell.self, for: indexPath) { [weak self] cell in
                 guard let topRatedMovies = self?.viewModel.topRatedMovies else { return }
+                cell.delegate = self
                 cell.carouseType = .topRated
                 cell.setup(topRatedMovies)
             }
@@ -165,6 +171,13 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             }
         case .none:
             return UICollectionViewCell()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == HomeSections.popular.rawValue {
+            guard let popularMovies = self.viewModel.popularMovies else { return }
+            didSelectMovie(popularMovies[indexPath.row])
         }
     }
 }
@@ -223,5 +236,11 @@ extension HomeViewController: UIScrollViewDelegate {
         } else {
             backgroundTop.transform = .init(translationX: 0, y: 0)
         }
+    }
+}
+
+extension HomeViewController: CarouselMovieDelegate {
+    func didSelectMovie(_ carouselView: CarouselMovieCell, movie: Film?) {
+        didSelectMovie(movie)
     }
 }
