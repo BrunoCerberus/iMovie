@@ -39,6 +39,10 @@
 
 + (UNMutableNotificationContent*)didReceiveNotificationExtensionRequest:(UNNotificationRequest*)request
                                          withMutableNotificationContent:(UNMutableNotificationContent*)replacementContent {
+    // Set default log level of NSE to VERBOSE so we get all logs from NSE logic
+    [OneSignal setLogLevel:ONE_S_LL_VERBOSE visualLevel:ONE_S_LL_NONE];
+    [OneSignal onesignal_Log:ONE_S_LL_VERBOSE message:@"NSE request received, setting OneSignal log level to VERBOSE!"];
+    
     if (!replacementContent)
         replacementContent = [request.content mutableCopy];
     
@@ -50,11 +54,14 @@
     // Track receieved
     [OneSignalTrackFirebaseAnalytics trackReceivedEvent:payload];
     
-    // Track Receive Receipt
-    [OneSignal.receiveReceiptsController sendReceiveReceiptWithNotificationId:payload.notificationID];
-
-    // Save receieved notification id
-    [OSOutcomesUtils saveReceivedNotificationFromBackground:payload.notificationID];
+    // Get and check the received notification id
+    let receivedNotificationId = payload.notificationID;
+    if (receivedNotificationId && ![receivedNotificationId isEqualToString:@""]) {
+        // Track confirmed delivery
+        [OneSignal.receiveReceiptsController sendReceiveReceiptWithNotificationId:receivedNotificationId];
+        // Save received notification id
+        [OSOutcomesUtils saveReceivedNotificationFromBackground:receivedNotificationId];
+    }
 
     // Action Buttons
     [self addActionButtonsToExtentionRequest:request

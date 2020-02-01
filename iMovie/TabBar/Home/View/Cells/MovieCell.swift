@@ -13,7 +13,16 @@ class MovieCell: UICollectionViewCell {
 
     @IBOutlet weak var movieImage: UIImageView!
     
+    var carouselType: CarouselType = .popular
+    
     func setup(_ movie: Film) {
-        movieImage.kf.setImage(with: movie.backdropImagePath)
+        
+        switch carouselType {
+        case .nowPlaying:
+            movieImage.kf.setImage(with: movie.backdropImagePath)
+        case .topRated, .popular:
+            movieImage.kf.setImage(with: movie.posterImagePath)
+        }
+        
     }
 }

@@ -63,6 +63,7 @@ extension CarouselMovieCell: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return collectionView.dequeueReusableCell(of: MovieCell.self, for: indexPath) { cell in
+            cell.carouselType = self.carouseType
             cell.setup(self.carouselMovies![indexPath.row])
         }
     }
@@ -87,6 +88,8 @@ extension CarouselMovieCell: UICollectionViewDelegateFlowLayout {
             return CGSize(width: collectionView.frame.width, height: 200)
         case .topRated:
             return CGSize(width: 140, height: 180)
+        case .popular:
+            return .zero
         }
     }
     
@@ -99,6 +102,8 @@ extension CarouselMovieCell: UICollectionViewDelegateFlowLayout {
             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         case .topRated:
             return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        case .popular:
+            return .zero
         }
     }
     

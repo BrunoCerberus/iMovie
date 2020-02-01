@@ -11,6 +11,7 @@ import Foundation
 enum CarouselType: Int {
     case nowPlaying
     case topRated
+    case popular
 }
 
 struct FilmsReturn: IMCodable {

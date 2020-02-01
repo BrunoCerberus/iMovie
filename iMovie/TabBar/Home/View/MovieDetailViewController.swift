@@ -10,16 +10,21 @@ import UIKit
 
 class MovieDetailViewController: BaseViewController {
     
+    @IBOutlet weak var titleMovieLabel: UILabel!
+    
     var movie: Film!
+    
+    private var anotherViewController: MovieDetailViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleMovieLabel.text = movie.title
     }
     
     init(_ movie: Film) {
         super.init(nibName: nil, bundle: nil)
         self.movie = movie
-        title = movie.title
     }
     
     required init?(coder: NSCoder) {

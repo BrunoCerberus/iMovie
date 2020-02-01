@@ -154,6 +154,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             return collectionView.dequeueReusableCell(of: CarouselMovieCell.self, for: indexPath) { [weak self] cell in
                 guard let nowPlayingMovies = self?.viewModel.nowPlayingMovies else { return }
                 cell.delegate = self
+                cell.carousel.bounces = false
                 cell.setup(nowPlayingMovies)
             }
         case .topRated:
