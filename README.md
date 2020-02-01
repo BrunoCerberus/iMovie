@@ -19,6 +19,7 @@ iMovie app, just an app for movies
 - [x] Dependencies Manager (Carthage)
 - [x] Clean Code (SwiftLint)
 - [x] POP
+- [ ] Modularize Utils
 
 ## Features
 - [ ] Home
