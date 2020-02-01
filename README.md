@@ -20,6 +20,7 @@ iMovie app, just an app for movies
 - [x] Clean Code (SwiftLint)
 - [x] POP
 - [ ] Modularize Utils
+- [ ] CI/CD (Fastlane)
 
 ## Features
 - [ ] Home
