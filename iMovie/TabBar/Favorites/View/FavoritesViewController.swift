@@ -15,7 +15,7 @@ class FavoritesViewController: BaseViewController {
     init(viewModel: FavoritesViewModel) {
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
-        tabBarItem.title = ""
+        title = "Favorites"
     }
     
     required init?(coder aDecoder: NSCoder) {

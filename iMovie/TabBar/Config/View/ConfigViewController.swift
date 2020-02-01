@@ -15,7 +15,7 @@ class ConfigViewController: BaseViewController {
     init(viewModel: ConfigViewModel) {
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
-        tabBarItem.title = ""
+        title = "Profile"
     }
     
     required init?(coder aDecoder: NSCoder) {

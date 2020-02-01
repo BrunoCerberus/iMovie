@@ -25,7 +25,7 @@ class ConfigCoordinator: BaseCoordinator {
         
         navigation = IMNavigationViewController(rootViewController: view!)
         navigation?.tabBarItem.image = #imageLiteral(resourceName: "TAB_CONFIG")
-        navigation?.tabBarItem.title = "Configurações"
+        navigation?.tabBarItem.title = "Profile"
         return navigation!
     }
     

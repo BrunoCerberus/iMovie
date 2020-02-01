@@ -28,7 +28,7 @@ class HomeCoordinator: BaseCoordinator {
         
         navigation = IMNavigationViewController(rootViewController: view!)
         navigation?.tabBarItem.image = #imageLiteral(resourceName: "TAB_HOME")
-        navigation?.tabBarItem.title = "Início"
+        navigation?.tabBarItem.title = "Home"
         return navigation!
     }
     
