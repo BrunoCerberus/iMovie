@@ -1,8 +1,4 @@
 <h1 align="center">
-<br>
-  <img src="screenshots/kotlin.png" width="300" alt="Kotlin Pokedex">
-<br>
-<br>
 iMovie app, just an app for movies
 </h1>
 
