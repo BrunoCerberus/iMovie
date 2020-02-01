@@ -71,6 +71,10 @@ extension CarouselMovieCell: UICollectionViewDelegate, UICollectionViewDataSourc
                         didSelectItemAt indexPath: IndexPath) {
         delegate?.didSelectMovie(self, movie: carouselMovies?[indexPath.row])
     }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+    }
 }
 
 extension CarouselMovieCell: UICollectionViewDelegateFlowLayout {
@@ -108,5 +112,4 @@ extension CarouselMovieCell: UICollectionViewDelegateFlowLayout {
             return .zero
         }
     }
-    
 }
