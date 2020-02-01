@@ -15,6 +15,7 @@
 		1505C5DB239AB2DB0025D64E /* ConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1505C5D9239AB2DB0025D64E /* ConfigViewController.xib */; };
 		1505C5DE239AB2FC0025D64E /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1505C5DC239AB2FC0025D64E /* FavoritesViewController.swift */; };
 		1505C5DF239AB2FC0025D64E /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1505C5DD239AB2FC0025D64E /* FavoritesViewController.xib */; };
+		15069CA823E52652007B8EED /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F5F79D23A0912900909C2F /* MovieCell.swift */; };
 		152821A6239EAB590063302E /* IMConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152821A5239EAB590063302E /* IMConfig.swift */; };
 		152821A8239EAC0B0063302E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152821A7239EAC0B0063302E /* Utils.swift */; };
 		152821AA239EAC5A0063302E /* Dictionary+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152821A9239EAC5A0063302E /* Dictionary+Utils.swift */; };
@@ -81,8 +82,6 @@
 		1569A1AE23AC7D07007AECA6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1569A19D23AC7D07007AECA6 /* Images.xcassets */; };
 		1569A1AF23AC7D07007AECA6 /* PKHUDSquareBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569A19E23AC7D07007AECA6 /* PKHUDSquareBaseView.swift */; };
 		1569A1B023AC7D07007AECA6 /* PKHUDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569A19F23AC7D07007AECA6 /* PKHUDErrorView.swift */; };
-		1585257623D7BA8A00109444 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1585257423D7BA8A00109444 /* MovieCell.swift */; };
-		1585257723D7BA8A00109444 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1585257523D7BA8A00109444 /* MovieCell.xib */; };
 		159F213623976FF300C5626F /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159F213523976FF300C5626F /* Keyboard.swift */; };
 		15BC4FD72397497400C0291F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BC4FD62397497400C0291F /* AppDelegate.swift */; };
 		15BC4FE12397497400C0291F /* iMovie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15BC4FDF2397497400C0291F /* iMovie.xcdatamodeld */; };
@@ -135,7 +134,6 @@
 		15BF99B1239A028C0005EB27 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BF99B0239A028C0005EB27 /* Coordinator.swift */; };
 		15F5F79B23A0883C00909C2F /* CarouselMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F5F79923A0883C00909C2F /* CarouselMovieCell.swift */; };
 		15F5F79C23A0883C00909C2F /* CarouselMovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15F5F79A23A0883C00909C2F /* CarouselMovieCell.xib */; };
-		15F5F79F23A0912900909C2F /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F5F79D23A0912900909C2F /* MovieCell.swift */; };
 		15F5F7A023A0912900909C2F /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15F5F79E23A0912900909C2F /* MovieCell.xib */; };
 /* End PBXBuildFile section */
 
@@ -245,8 +243,6 @@
 		1569A19D23AC7D07007AECA6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1569A19E23AC7D07007AECA6 /* PKHUDSquareBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSquareBaseView.swift; sourceTree = "<group>"; };
 		1569A19F23AC7D07007AECA6 /* PKHUDErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDErrorView.swift; sourceTree = "<group>"; };
-		1585257423D7BA8A00109444 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
-		1585257523D7BA8A00109444 /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
 		159F213523976FF300C5626F /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		15BC4FD32397497400C0291F /* iMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15BC4FD62397497400C0291F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -873,6 +869,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15069CA823E52652007B8EED /* MovieCell.swift in Sources */,
 				1569A17A23AC73B4007AECA6 /* NVActivityIndicatorAnimationBallRotateChase.swift in Sources */,
 				152821BC239EBF920063302E /* Movie.swift in Sources */,
 				1569A17C23AC73B4007AECA6 /* NVActivityIndicatorAnimationBlank.swift in Sources */,
@@ -893,13 +890,11 @@
 				1505C5CA239AA4860025D64E /* FavoritesCoordinator.swift in Sources */,
 				15BC503623976CD200C0291F /* AlertManager.swift in Sources */,
 				1569A17623AC73B4007AECA6 /* NVActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
-				15F5F79F23A0912900909C2F /* MovieCell.swift in Sources */,
 				152821C0239ED44D0063302E /* BaseService.swift in Sources */,
 				1569A16F23AC73B4007AECA6 /* NVActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				1569A1A523AC7D07007AECA6 /* PKHUDSuccessView.swift in Sources */,
 				15BF99AB2399F90C0005EB27 /* BaseViewController.swift in Sources */,
 				1569A16923AC73B4007AECA6 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */,
-				1585257623D7BA8A00109444 /* MovieCell.swift in Sources */,
 				1505C5D5239AB2750025D64E /* ConfigCoordinator.swift in Sources */,
 				1569A18A23AC73B4007AECA6 /* NVActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				1569A17123AC73B4007AECA6 /* NVActivityIndicatorAnimationBallZigZag.swift in Sources */,
