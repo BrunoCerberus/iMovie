@@ -29,7 +29,7 @@ class CarouselMovieCell: UICollectionViewCell {
         
         carousel.delegate = self
         carousel.dataSource = self
-        carousel.register(HeaderMovieCell.self)
+        carousel.register(MovieCell.self)
     }
     
     override func prepareForReuse() {
@@ -52,18 +52,6 @@ class CarouselMovieCell: UICollectionViewCell {
             carousel.bounces = true
         }
     }
-    
-    /// Return index of main cell collection
-    ///
-    /// - Returns: index of main cell
-    private func indexOfMainCell() -> Int {
-        let itemWidth = self.frame.width - edgeCellDistance
-        let proportionalOffset = collectionViewLayout.collectionView!.contentOffset.x / itemWidth
-        let index = Int(Darwin.round(proportionalOffset))
-        let numberOfItems = carousel.numberOfItems(inSection: 0)
-        let safeIndex = max(0, min(numberOfItems - 1, index))
-        return safeIndex
-    }
 }
 
 extension CarouselMovieCell: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -74,7 +62,7 @@ extension CarouselMovieCell: UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(of: HeaderMovieCell.self, for: indexPath) { cell in
+        return collectionView.dequeueReusableCell(of: MovieCell.self, for: indexPath) { cell in
             cell.setup(self.carouselMovies![indexPath.row])
         }
     }
@@ -107,6 +95,17 @@ extension CarouselMovieCell: UICollectionViewDelegateFlowLayout {
             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         case .topRated:
             return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        switch carouseType {
+        case .topRated:
+            return 10
+        default:
+            return .zero
         }
     }
     

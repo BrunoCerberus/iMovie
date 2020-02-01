@@ -57,7 +57,7 @@ final class HomeViewController: BaseViewController {
     
     private func registerCells() {
         homeCollection.register(CarouselMovieCell.self)
-        homeCollection.register(HeaderMovieCell.self)
+        homeCollection.register(MovieCell.self)
     }
     
     private func requestAll(completion: CompletionSuccess? = nil) {
@@ -159,7 +159,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             }
             
         case .popular:
-            return collectionView.dequeueReusableCell(of: HeaderMovieCell.self, for: indexPath) { [weak self] cell in
+            return collectionView.dequeueReusableCell(of: MovieCell.self, for: indexPath) { [weak self] cell in
                 guard let popularMovies = self?.viewModel.popularMovies else { return }
                 cell.setup(popularMovies[indexPath.row])
             }
