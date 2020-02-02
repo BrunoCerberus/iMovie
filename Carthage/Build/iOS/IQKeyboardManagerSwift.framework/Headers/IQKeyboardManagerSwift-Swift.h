@@ -586,10 +586,10 @@ SWIFT_CLASS("_TtC22IQKeyboardManagerSwift9IQToolbar")
 
 
 @interface UIImage (SWIFT_EXTENSION(IQKeyboardManagerSwift))
-+ (UIImage * _Nullable)keyboardPreviousiOS9Image SWIFT_WARN_UNUSED_RESULT;
-+ (UIImage * _Nullable)keyboardNextiOS9Image SWIFT_WARN_UNUSED_RESULT;
-+ (UIImage * _Nullable)keyboardPreviousiOS10Image SWIFT_WARN_UNUSED_RESULT;
-+ (UIImage * _Nullable)keyboardNextiOS10Image SWIFT_WARN_UNUSED_RESULT;
++ (UIImage * _Nullable)keyboardLeftImage SWIFT_WARN_UNUSED_RESULT;
++ (UIImage * _Nullable)keyboardRightImage SWIFT_WARN_UNUSED_RESULT;
++ (UIImage * _Nullable)keyboardUpImage SWIFT_WARN_UNUSED_RESULT;
++ (UIImage * _Nullable)keyboardDownImage SWIFT_WARN_UNUSED_RESULT;
 + (UIImage * _Nullable)keyboardPreviousImage SWIFT_WARN_UNUSED_RESULT;
 + (UIImage * _Nullable)keyboardNextImage SWIFT_WARN_UNUSED_RESULT;
 @end
@@ -598,6 +598,8 @@ SWIFT_CLASS("_TtC22IQKeyboardManagerSwift9IQToolbar")
 @interface UIScrollView (SWIFT_EXTENSION(IQKeyboardManagerSwift))
 /// If YES, then scrollview will ignore scrolling (simply not scroll it) for adjusting textfield position. Default is NO.
 @property (nonatomic) BOOL shouldIgnoreScrollingAdjustment;
+/// If YES, then scrollview will ignore content inset adjustment (simply not updating it) when keyboard is shown. Default is NO.
+@property (nonatomic) BOOL shouldIgnoreContentInsetAdjustment;
 /// To set customized distance from keyboard for textField/textView. Can’t be less than zero
 @property (nonatomic) BOOL shouldRestoreScrollViewContentOffset;
 @end
@@ -691,14 +693,11 @@ SWIFT_CLASS("_TtC22IQKeyboardManagerSwift9IQToolbar")
 - (void)addPreviousNextRightOnKeyboardWithTarget:(id _Nullable)target rightButtonTitle:(NSString * _Nonnull)rightButtonTitle previousAction:(SEL _Nonnull)previousAction nextAction:(SEL _Nonnull)nextAction rightButtonAction:(SEL _Nonnull)rightButtonAction titleText:(NSString * _Nullable)titleText;
 @end
 
-
-@interface UIViewController (SWIFT_EXTENSION(IQKeyboardManagerSwift))
-- (UIViewController * _Nullable)parentIQContainerViewController SWIFT_WARN_UNUSED_RESULT;
-@end
-
 @class NSLayoutConstraint;
 
 @interface UIViewController (SWIFT_EXTENSION(IQKeyboardManagerSwift))
+/// This method is provided to override by viewController’s if the library lifts a viewController which you doesn’t want to lift . This may happen if you have implemented side menu feature in your app and the library try to lift the side menu controller. Overriding this method in side menu class to return correct controller should fix the problem.
+- (UIViewController * _Nullable)parentIQContainerViewController SWIFT_WARN_UNUSED_RESULT;
 /// To set customized distance from keyboard for textField/textView. Can’t be less than zero
 /// @deprecated    Due to change in core-logic of handling distance between textField and keyboard distance, this layout contraint tweak is no longer needed and things will just work out of the box regardless of constraint pinned with safeArea/layoutGuide/superview
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint * _Nullable IQLayoutGuideConstraint SWIFT_DEPRECATED_MSG("Due to change in core-logic of handling distance between textField and keyboard distance, this layout contraint tweak is no longer needed and things will just work out of the box regardless of constraint pinned with safeArea/layoutGuide/superview.");
@@ -1292,10 +1291,10 @@ SWIFT_CLASS("_TtC22IQKeyboardManagerSwift9IQToolbar")
 
 
 @interface UIImage (SWIFT_EXTENSION(IQKeyboardManagerSwift))
-+ (UIImage * _Nullable)keyboardPreviousiOS9Image SWIFT_WARN_UNUSED_RESULT;
-+ (UIImage * _Nullable)keyboardNextiOS9Image SWIFT_WARN_UNUSED_RESULT;
-+ (UIImage * _Nullable)keyboardPreviousiOS10Image SWIFT_WARN_UNUSED_RESULT;
-+ (UIImage * _Nullable)keyboardNextiOS10Image SWIFT_WARN_UNUSED_RESULT;
++ (UIImage * _Nullable)keyboardLeftImage SWIFT_WARN_UNUSED_RESULT;
++ (UIImage * _Nullable)keyboardRightImage SWIFT_WARN_UNUSED_RESULT;
++ (UIImage * _Nullable)keyboardUpImage SWIFT_WARN_UNUSED_RESULT;
++ (UIImage * _Nullable)keyboardDownImage SWIFT_WARN_UNUSED_RESULT;
 + (UIImage * _Nullable)keyboardPreviousImage SWIFT_WARN_UNUSED_RESULT;
 + (UIImage * _Nullable)keyboardNextImage SWIFT_WARN_UNUSED_RESULT;
 @end
@@ -1304,6 +1303,8 @@ SWIFT_CLASS("_TtC22IQKeyboardManagerSwift9IQToolbar")
 @interface UIScrollView (SWIFT_EXTENSION(IQKeyboardManagerSwift))
 /// If YES, then scrollview will ignore scrolling (simply not scroll it) for adjusting textfield position. Default is NO.
 @property (nonatomic) BOOL shouldIgnoreScrollingAdjustment;
+/// If YES, then scrollview will ignore content inset adjustment (simply not updating it) when keyboard is shown. Default is NO.
+@property (nonatomic) BOOL shouldIgnoreContentInsetAdjustment;
 /// To set customized distance from keyboard for textField/textView. Can’t be less than zero
 @property (nonatomic) BOOL shouldRestoreScrollViewContentOffset;
 @end
@@ -1397,14 +1398,11 @@ SWIFT_CLASS("_TtC22IQKeyboardManagerSwift9IQToolbar")
 - (void)addPreviousNextRightOnKeyboardWithTarget:(id _Nullable)target rightButtonTitle:(NSString * _Nonnull)rightButtonTitle previousAction:(SEL _Nonnull)previousAction nextAction:(SEL _Nonnull)nextAction rightButtonAction:(SEL _Nonnull)rightButtonAction titleText:(NSString * _Nullable)titleText;
 @end
 
-
-@interface UIViewController (SWIFT_EXTENSION(IQKeyboardManagerSwift))
-- (UIViewController * _Nullable)parentIQContainerViewController SWIFT_WARN_UNUSED_RESULT;
-@end
-
 @class NSLayoutConstraint;
 
 @interface UIViewController (SWIFT_EXTENSION(IQKeyboardManagerSwift))
+/// This method is provided to override by viewController’s if the library lifts a viewController which you doesn’t want to lift . This may happen if you have implemented side menu feature in your app and the library try to lift the side menu controller. Overriding this method in side menu class to return correct controller should fix the problem.
+- (UIViewController * _Nullable)parentIQContainerViewController SWIFT_WARN_UNUSED_RESULT;
 /// To set customized distance from keyboard for textField/textView. Can’t be less than zero
 /// @deprecated    Due to change in core-logic of handling distance between textField and keyboard distance, this layout contraint tweak is no longer needed and things will just work out of the box regardless of constraint pinned with safeArea/layoutGuide/superview
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint * _Nullable IQLayoutGuideConstraint SWIFT_DEPRECATED_MSG("Due to change in core-logic of handling distance between textField and keyboard distance, this layout contraint tweak is no longer needed and things will just work out of the box regardless of constraint pinned with safeArea/layoutGuide/superview.");
@@ -2002,10 +2000,10 @@ SWIFT_CLASS("_TtC22IQKeyboardManagerSwift9IQToolbar")
 
 
 @interface UIImage (SWIFT_EXTENSION(IQKeyboardManagerSwift))
-+ (UIImage * _Nullable)keyboardPreviousiOS9Image SWIFT_WARN_UNUSED_RESULT;
-+ (UIImage * _Nullable)keyboardNextiOS9Image SWIFT_WARN_UNUSED_RESULT;
-+ (UIImage * _Nullable)keyboardPreviousiOS10Image SWIFT_WARN_UNUSED_RESULT;
-+ (UIImage * _Nullable)keyboardNextiOS10Image SWIFT_WARN_UNUSED_RESULT;
++ (UIImage * _Nullable)keyboardLeftImage SWIFT_WARN_UNUSED_RESULT;
++ (UIImage * _Nullable)keyboardRightImage SWIFT_WARN_UNUSED_RESULT;
++ (UIImage * _Nullable)keyboardUpImage SWIFT_WARN_UNUSED_RESULT;
++ (UIImage * _Nullable)keyboardDownImage SWIFT_WARN_UNUSED_RESULT;
 + (UIImage * _Nullable)keyboardPreviousImage SWIFT_WARN_UNUSED_RESULT;
 + (UIImage * _Nullable)keyboardNextImage SWIFT_WARN_UNUSED_RESULT;
 @end
@@ -2014,6 +2012,8 @@ SWIFT_CLASS("_TtC22IQKeyboardManagerSwift9IQToolbar")
 @interface UIScrollView (SWIFT_EXTENSION(IQKeyboardManagerSwift))
 /// If YES, then scrollview will ignore scrolling (simply not scroll it) for adjusting textfield position. Default is NO.
 @property (nonatomic) BOOL shouldIgnoreScrollingAdjustment;
+/// If YES, then scrollview will ignore content inset adjustment (simply not updating it) when keyboard is shown. Default is NO.
+@property (nonatomic) BOOL shouldIgnoreContentInsetAdjustment;
 /// To set customized distance from keyboard for textField/textView. Can’t be less than zero
 @property (nonatomic) BOOL shouldRestoreScrollViewContentOffset;
 @end
@@ -2107,14 +2107,11 @@ SWIFT_CLASS("_TtC22IQKeyboardManagerSwift9IQToolbar")
 - (void)addPreviousNextRightOnKeyboardWithTarget:(id _Nullable)target rightButtonTitle:(NSString * _Nonnull)rightButtonTitle previousAction:(SEL _Nonnull)previousAction nextAction:(SEL _Nonnull)nextAction rightButtonAction:(SEL _Nonnull)rightButtonAction titleText:(NSString * _Nullable)titleText;
 @end
 
-
-@interface UIViewController (SWIFT_EXTENSION(IQKeyboardManagerSwift))
-- (UIViewController * _Nullable)parentIQContainerViewController SWIFT_WARN_UNUSED_RESULT;
-@end
-
 @class NSLayoutConstraint;
 
 @interface UIViewController (SWIFT_EXTENSION(IQKeyboardManagerSwift))
+/// This method is provided to override by viewController’s if the library lifts a viewController which you doesn’t want to lift . This may happen if you have implemented side menu feature in your app and the library try to lift the side menu controller. Overriding this method in side menu class to return correct controller should fix the problem.
+- (UIViewController * _Nullable)parentIQContainerViewController SWIFT_WARN_UNUSED_RESULT;
 /// To set customized distance from keyboard for textField/textView. Can’t be less than zero
 /// @deprecated    Due to change in core-logic of handling distance between textField and keyboard distance, this layout contraint tweak is no longer needed and things will just work out of the box regardless of constraint pinned with safeArea/layoutGuide/superview
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint * _Nullable IQLayoutGuideConstraint SWIFT_DEPRECATED_MSG("Due to change in core-logic of handling distance between textField and keyboard distance, this layout contraint tweak is no longer needed and things will just work out of the box regardless of constraint pinned with safeArea/layoutGuide/superview.");
@@ -2708,10 +2705,10 @@ SWIFT_CLASS("_TtC22IQKeyboardManagerSwift9IQToolbar")
 
 
 @interface UIImage (SWIFT_EXTENSION(IQKeyboardManagerSwift))
-+ (UIImage * _Nullable)keyboardPreviousiOS9Image SWIFT_WARN_UNUSED_RESULT;
-+ (UIImage * _Nullable)keyboardNextiOS9Image SWIFT_WARN_UNUSED_RESULT;
-+ (UIImage * _Nullable)keyboardPreviousiOS10Image SWIFT_WARN_UNUSED_RESULT;
-+ (UIImage * _Nullable)keyboardNextiOS10Image SWIFT_WARN_UNUSED_RESULT;
++ (UIImage * _Nullable)keyboardLeftImage SWIFT_WARN_UNUSED_RESULT;
++ (UIImage * _Nullable)keyboardRightImage SWIFT_WARN_UNUSED_RESULT;
++ (UIImage * _Nullable)keyboardUpImage SWIFT_WARN_UNUSED_RESULT;
++ (UIImage * _Nullable)keyboardDownImage SWIFT_WARN_UNUSED_RESULT;
 + (UIImage * _Nullable)keyboardPreviousImage SWIFT_WARN_UNUSED_RESULT;
 + (UIImage * _Nullable)keyboardNextImage SWIFT_WARN_UNUSED_RESULT;
 @end
@@ -2720,6 +2717,8 @@ SWIFT_CLASS("_TtC22IQKeyboardManagerSwift9IQToolbar")
 @interface UIScrollView (SWIFT_EXTENSION(IQKeyboardManagerSwift))
 /// If YES, then scrollview will ignore scrolling (simply not scroll it) for adjusting textfield position. Default is NO.
 @property (nonatomic) BOOL shouldIgnoreScrollingAdjustment;
+/// If YES, then scrollview will ignore content inset adjustment (simply not updating it) when keyboard is shown. Default is NO.
+@property (nonatomic) BOOL shouldIgnoreContentInsetAdjustment;
 /// To set customized distance from keyboard for textField/textView. Can’t be less than zero
 @property (nonatomic) BOOL shouldRestoreScrollViewContentOffset;
 @end
@@ -2813,14 +2812,11 @@ SWIFT_CLASS("_TtC22IQKeyboardManagerSwift9IQToolbar")
 - (void)addPreviousNextRightOnKeyboardWithTarget:(id _Nullable)target rightButtonTitle:(NSString * _Nonnull)rightButtonTitle previousAction:(SEL _Nonnull)previousAction nextAction:(SEL _Nonnull)nextAction rightButtonAction:(SEL _Nonnull)rightButtonAction titleText:(NSString * _Nullable)titleText;
 @end
 
-
-@interface UIViewController (SWIFT_EXTENSION(IQKeyboardManagerSwift))
-- (UIViewController * _Nullable)parentIQContainerViewController SWIFT_WARN_UNUSED_RESULT;
-@end
-
 @class NSLayoutConstraint;
 
 @interface UIViewController (SWIFT_EXTENSION(IQKeyboardManagerSwift))
+/// This method is provided to override by viewController’s if the library lifts a viewController which you doesn’t want to lift . This may happen if you have implemented side menu feature in your app and the library try to lift the side menu controller. Overriding this method in side menu class to return correct controller should fix the problem.
+- (UIViewController * _Nullable)parentIQContainerViewController SWIFT_WARN_UNUSED_RESULT;
 /// To set customized distance from keyboard for textField/textView. Can’t be less than zero
 /// @deprecated    Due to change in core-logic of handling distance between textField and keyboard distance, this layout contraint tweak is no longer needed and things will just work out of the box regardless of constraint pinned with safeArea/layoutGuide/superview
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint * _Nullable IQLayoutGuideConstraint SWIFT_DEPRECATED_MSG("Due to change in core-logic of handling distance between textField and keyboard distance, this layout contraint tweak is no longer needed and things will just work out of the box regardless of constraint pinned with safeArea/layoutGuide/superview.");
