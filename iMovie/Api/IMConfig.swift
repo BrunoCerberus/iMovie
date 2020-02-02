@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 
+// um typealias para um bloco simples é necessário.
 typealias CompletionSuccess = (() -> Void)?
 
 #if RELEASE
@@ -17,6 +18,7 @@ let debugRequests = false
 let debugRequests = true
 #endif
 
+// muda esse Fetcher para qualquer outro nome
 class IMConfig<T: Fetcher> {
     
     let alamofireManager = Alamofire.SessionManager.default
@@ -24,7 +26,7 @@ class IMConfig<T: Fetcher> {
     public func fetch<V: Codable>(target: T,
                                   dataType: V.Type,
                                   completion: ((Result<V>, URLResponse?) -> Void)?) {
-        
+        // mantenha-se em nomeclaturas EN, esquece PT ou mistureba. 
         requestCodable(metodo: target.method,
                        objeto: dataType,
                        parametros: target.task?.dictionary() ?? [:],
@@ -46,6 +48,7 @@ class IMConfig<T: Fetcher> {
         where T: Codable {
             
             if !Utils.isConnectedToNetwork() {
+                // da erro mas não passa o objeto/ tipo pra frente?
                 onFail(nil, IMError())
                 return
             }
@@ -62,6 +65,7 @@ class IMConfig<T: Fetcher> {
             if let url = url {
                 urlRequisicao = API.baseUrl + url
             } else {
+                // da erro mas não passa o objeto pra frente?
                 onFail(nil, IMError())
                 print("Ocorreu um erro, nenhum método padrão esta definido e nenhuma url personalizada esta definida")
                 return
@@ -95,11 +99,12 @@ class IMConfig<T: Fetcher> {
                     
                     switch response.result {
                     case .success:
-                        
+                        // como esses force casts passaram no lint?
                         do {
                             let objeto = try JSONDecoder().decode(objeto.self, from: response.data!)
                             onSuccess(response.response!, objeto)
                         } catch let error {
+                            // vc tem que passar o erro do decode para frente... a camada para por aqui sem fazer nada.
                             print("\n\n===========Error===========")
                             print("Error Code: \(error._code)")
                             print("Error Messsage: \(error.localizedDescription)")
