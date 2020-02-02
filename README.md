@@ -21,8 +21,13 @@ iMovie app, just an app for movies
 - [x] POP
 - [ ] Modularize Utils
 - [ ] CI/CD (Fastlane)
+- [ ] Push Notification (OneSignal)
+- [ ] Google Crashlytics
+- [ ] SinUp and SingIn with Apple
 
 ## Features
+- [ ] Login
+- [ ] SignUp
 - [ ] Home
 - [ ] Favorites
 - [ ] Profile
