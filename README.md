@@ -14,10 +14,10 @@ iMovie app, just an app for movies
 - [x] Network layer (Alamofire)
 - [x] TMDb Api (The Movie Database)
 - [ ] Skeleton
-- [x] Cache (Kingfisher)
+- [x] Image Cache (Kingfisher)
 - [ ] Toast Messages (SwiftMessages) 
 - [x] Dependencies Manager (Carthage)
-- [x] Clean Code (SwiftLint)
+- [x] Code Analyser (Swiftlint)
 - [x] POP
 - [ ] Modularize Utils
 - [ ] CI/CD (Fastlane)
