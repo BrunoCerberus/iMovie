@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppCoordinator: Coordinator {
+class AppCoordinator: BaseCoordinator {
     
     var window: UIWindow
     var foregroundWindow: UIWindow

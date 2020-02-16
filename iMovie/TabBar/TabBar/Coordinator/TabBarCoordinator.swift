@@ -12,7 +12,7 @@ protocol TabBarCoordinatorDelegate: AnyObject {
 
 import UIKit
 
-class TabBarCoordinator: Coordinator {
+class TabBarCoordinator: BaseCoordinator {
     
     var window: UIWindow
     weak var delegate: TabBarCoordinatorDelegate?

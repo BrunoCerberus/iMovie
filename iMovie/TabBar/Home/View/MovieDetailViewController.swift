@@ -10,8 +10,6 @@ import UIKit
 
 class MovieDetailViewController: BaseViewController {
     
-    @IBOutlet weak var titleNavigation: UINavigationItem!
-    
     var movie: Film!
     
     private var anotherViewController: MovieDetailViewController!
@@ -19,7 +17,7 @@ class MovieDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleNavigation.title = movie.title
+        title = movie.title
     }
     
     init(_ movie: Film) {

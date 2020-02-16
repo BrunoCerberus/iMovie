@@ -44,7 +44,8 @@ class HomeCoordinator: BaseCoordinator {
     func showMovieDetail(_ movie: Film) {
         guard let navigationController = navigation else { return }
         detailViewController = MovieDetailViewController(movie)
-        navigationController.present(detailViewController, animated: true, completion: nil)
+        let detailNavigationController = IMNavigationViewController(rootViewController: detailViewController)
+        navigationController.present(detailNavigationController, animated: true, completion: nil)
     }
 }
 
