@@ -24,7 +24,8 @@ iMovie app, just an app for movies
 - [x] TMDb Api (The Movie Database)
 - [ ] Skeleton
 - [ ] Infinite Scrolling
-- [ ] Grand Central Dispatch (GCD)
+- [x] Pull-To-Refresh
+- [x] Grand Central Dispatch (GCD)
 - [x] Image Cache (Kingfisher)
 - [ ] Toast Messages (SwiftMessages) 
 - [x] Dependencies Manager (Carthage)
