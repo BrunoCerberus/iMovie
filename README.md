@@ -26,7 +26,8 @@ iMovie app, just an app for movies
 - [x] Dependencies Manager (Carthage)
 - [x] Code Analyser (Swiftlint)
 - [x] POP
-- [ ] Modularize Utils
+- [ ] Modularization
+- [ ] Custom components
 - [ ] CI/CD (Fastlane)
 - [ ] Notification Center
 - [ ] Singletons
