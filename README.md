@@ -2,18 +2,25 @@
 iMovie app, just an app for movies
 </h1>
 
+## Requirements for running this project
+- Xcode 11.3.1
+- SwiftLint
+- iOS 10+
+
 ## Development Roadmap
 
-- [x] Swift
+- [x] Swift 5+
 - [ ] Core Data
 - [x] Codable
 - [x] MVVM
 - [x] Coordinator
 - [ ] Unit Tests
 - [ ] UI Tests (Kif)
-- [x] Network layer (Alamofire)
+- [x] Network layer
 - [x] TMDb Api (The Movie Database)
 - [ ] Skeleton
+- [ ] Infinite Scrolling
+- [ ] Grand Central Dispatch (GCD)
 - [x] Image Cache (Kingfisher)
 - [ ] Toast Messages (SwiftMessages) 
 - [x] Dependencies Manager (Carthage)
