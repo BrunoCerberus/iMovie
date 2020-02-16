@@ -78,7 +78,6 @@
 		1569A1AB23AC7D07007AECA6 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569A19A23AC7D07007AECA6 /* Window.swift */; };
 		1569A1AC23AC7D07007AECA6 /* WindowRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569A19B23AC7D07007AECA6 /* WindowRootViewController.swift */; };
 		1569A1AD23AC7D07007AECA6 /* PKHUDProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569A19C23AC7D07007AECA6 /* PKHUDProgressView.swift */; };
-		1569A1AE23AC7D07007AECA6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1569A19D23AC7D07007AECA6 /* Images.xcassets */; };
 		1569A1AF23AC7D07007AECA6 /* PKHUDSquareBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569A19E23AC7D07007AECA6 /* PKHUDSquareBaseView.swift */; };
 		1569A1B023AC7D07007AECA6 /* PKHUDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569A19F23AC7D07007AECA6 /* PKHUDErrorView.swift */; };
 		1579C0CB23E5F1A40036A715 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579C0C923E5F1A40036A715 /* MovieDetailViewController.swift */; };
@@ -798,7 +797,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1579C0CC23E5F1A40036A715 /* MovieDetailViewController.xib in Resources */,
-				1569A1AE23AC7D07007AECA6 /* Images.xcassets in Resources */,
 				15BC4FE62397497500C0291F /* LaunchScreen.storyboard in Resources */,
 				15BF999C2399F18D0005EB27 /* TabBarController.xib in Resources */,
 				15BF99AF2399FDA40005EB27 /* Assets.xcassets in Resources */,
