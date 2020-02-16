@@ -30,7 +30,7 @@ public extension UIView {
            PKHUD.sharedHUD.dimsBackground = true
            let activity = NVActivityIndicatorView(frame: CGRect(x: 1, y: 1, width: 50, height: 50),
                                                   type: .ballClipRotateWithoutScale,
-                                                  color: UIColor(fromHex: 0x64C346),
+                                                  color: .imHUDIndicator,
                                                   padding: 0.0 )
            activity.startAnimating()
            activity.clipsToBounds = false

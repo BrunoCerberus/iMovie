@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="iMovie" customModuleProvider="target">
             <connections>
-                <outlet property="backgroundTop" destination="FDb-HW-3gM" id="SOD-W1-PCM"/>
                 <outlet property="homeCollection" destination="KxG-g3-FYK" id="dgD-0M-hx2"/>
                 <outlet property="homeFlow" destination="aj2-f0-gvA" id="gkb-ZM-uDl"/>
-                <outlet property="pullAreaConstraint" destination="2X2-zt-udE" id="hlt-FF-4uh"/>
                 <outlet property="view" destination="Ikr-0g-YKs" id="5Zd-ip-5IN"/>
             </connections>
         </placeholder>
@@ -22,10 +20,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FDb-HW-3gM" userLabel="greenTopBg">
-                    <rect key="frame" x="0.0" y="-1324" width="414" height="1344"/>
-                    <color key="backgroundColor" red="0.96862745098039216" green="0.80784313725490198" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
-                </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="KxG-g3-FYK">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" red="0.14901960780000001" green="0.1529411765" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -43,13 +37,9 @@
             </subviews>
             <color key="backgroundColor" red="0.14901960780000001" green="0.1529411765" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="FDb-HW-3gM" firstAttribute="bottom" secondItem="Ikr-0g-YKs" secondAttribute="top" constant="20" id="2X2-zt-udE"/>
                 <constraint firstItem="KxG-g3-FYK" firstAttribute="leading" secondItem="dps-9o-1vB" secondAttribute="leading" id="7te-bg-ONf"/>
                 <constraint firstItem="dps-9o-1vB" firstAttribute="bottom" secondItem="KxG-g3-FYK" secondAttribute="bottom" id="DhQ-9P-1a5"/>
-                <constraint firstItem="dps-9o-1vB" firstAttribute="trailing" secondItem="FDb-HW-3gM" secondAttribute="trailing" id="Hix-Ju-36i"/>
-                <constraint firstItem="FDb-HW-3gM" firstAttribute="height" secondItem="Ikr-0g-YKs" secondAttribute="height" multiplier="1.5" id="Nf2-HR-QJk"/>
                 <constraint firstItem="dps-9o-1vB" firstAttribute="trailing" secondItem="KxG-g3-FYK" secondAttribute="trailing" id="Q3c-fQ-LrR"/>
-                <constraint firstItem="FDb-HW-3gM" firstAttribute="leading" secondItem="dps-9o-1vB" secondAttribute="leading" id="XuV-P4-2xs"/>
                 <constraint firstItem="KxG-g3-FYK" firstAttribute="top" secondItem="dps-9o-1vB" secondAttribute="top" id="hdy-KG-Sr8"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="dps-9o-1vB"/>

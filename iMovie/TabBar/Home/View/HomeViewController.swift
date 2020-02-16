@@ -6,14 +6,13 @@
 //  Copyright © 2019 bruno. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 final class HomeViewController: BaseViewController {
     
     @IBOutlet weak var homeCollection: UICollectionView!
     @IBOutlet weak var homeFlow: UICollectionViewFlowLayout!
-    @IBOutlet weak var backgroundTop: UIView!
-    @IBOutlet weak var pullAreaConstraint: NSLayoutConstraint!
     
     private var viewModel: HomeViewModel!
     private var dispatchGroup: DispatchGroup!
@@ -42,17 +41,13 @@ final class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.showHUD()
         setup()
     }
     
     private func setup() {
         registerCells()
         addRefreshControl()
-        
-        if Device.size() >= .screen5_8Inch || Device.size() == .unknownSize {
-            pullAreaConstraint.constant = 44
-        }
-        
         refreshHome()
     }
     
@@ -82,38 +77,21 @@ final class HomeViewController: BaseViewController {
         viewModel.requestPopular()
     }
     
-    func showNetworkOperation(_ show: Bool) {
-        DispatchQueue.main.async {
-            UIApplication.shared.isNetworkActivityIndicatorVisible = show
-        }
-    }
-    
     private func addRefreshControl() {
         refreshControl = UIRefreshControl()
-        refreshControl.backgroundColor = .clear
-        refreshControl.tintColor       = .clear
+        refreshControl.tintColor = .white
         refreshControl.addTarget(self, action: #selector(refreshHome), for: .valueChanged)
-        self.homeCollection.insertSubview(refreshControl, at: 0)
-        
-        let screen = UIScreen.main.bounds
-        let activityIndicator = NVActivityIndicatorView(frame: CGRect(x: screen.width / 2 - 12.5,
-                                                                      y: 0,
-                                                                      width: 25.0,
-                                                                      height: 25.0))
-        activityIndicator.type = .ballClipRotate
-        activityIndicator.startAnimating()
-        refreshControl.subviews[0].addSubview(activityIndicator)
+        homeCollection.refreshControl = refreshControl
     }
     
     @objc func refreshHome() {
-        self.showNetworkOperation(true)
         requestAll()
         
         dispatchGroup.notify(queue: .main) {
-            self.showNetworkOperation(false)
-            DispatchQueue.main.async {
-                self.refreshControl.endRefreshing()
-                self.homeCollection.reloadData()
+            DispatchQueue.main.async { [weak self] in
+                self?.view.hideHUD()
+                self?.refreshControl.endRefreshing()
+                self?.homeCollection.reloadData()
             }
         }
     }
@@ -220,17 +198,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
             return 10
         default:
             return 0
-        }
-    }
-}
-
-extension HomeViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offset = -scrollView.contentOffset.y
-        if offset >= 0 {
-            backgroundTop.transform = .init(translationX: 0, y: offset)
-        } else {
-            backgroundTop.transform = .init(translationX: 0, y: 0)
         }
     }
 }
