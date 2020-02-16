@@ -80,6 +80,9 @@
 		1569A1AD23AC7D07007AECA6 /* PKHUDProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569A19C23AC7D07007AECA6 /* PKHUDProgressView.swift */; };
 		1569A1AF23AC7D07007AECA6 /* PKHUDSquareBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569A19E23AC7D07007AECA6 /* PKHUDSquareBaseView.swift */; };
 		1569A1B023AC7D07007AECA6 /* PKHUDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569A19F23AC7D07007AECA6 /* PKHUDErrorView.swift */; };
+		1571E54823F9DC080002E279 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1571E54723F9DC080002E279 /* SearchViewModel.swift */; };
+		1571E54A23F9DC590002E279 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1571E54923F9DC590002E279 /* SearchViewController.swift */; };
+		1571E54C23F9DD050002E279 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1571E54B23F9DD050002E279 /* SearchCoordinator.swift */; };
 		1579C0CB23E5F1A40036A715 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579C0C923E5F1A40036A715 /* MovieDetailViewController.swift */; };
 		1579C0CC23E5F1A40036A715 /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1579C0CA23E5F1A40036A715 /* MovieDetailViewController.xib */; };
 		159F213623976FF300C5626F /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159F213523976FF300C5626F /* Keyboard.swift */; };
@@ -238,6 +241,9 @@
 		1569A19D23AC7D07007AECA6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1569A19E23AC7D07007AECA6 /* PKHUDSquareBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSquareBaseView.swift; sourceTree = "<group>"; };
 		1569A19F23AC7D07007AECA6 /* PKHUDErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDErrorView.swift; sourceTree = "<group>"; };
+		1571E54723F9DC080002E279 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		1571E54923F9DC590002E279 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		1571E54B23F9DD050002E279 /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
 		1579C0C923E5F1A40036A715 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		1579C0CA23E5F1A40036A715 /* MovieDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailViewController.xib; sourceTree = "<group>"; };
 		159F213523976FF300C5626F /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
@@ -497,6 +503,48 @@
 			path = PKHUD;
 			sourceTree = "<group>";
 		};
+		1571E54123F9DBC20002E279 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				1571E54623F9DBF60002E279 /* Model */,
+				1571E54423F9DBE90002E279 /* ViewModel */,
+				1571E54323F9DBE40002E279 /* View */,
+				1571E54223F9DBDA0002E279 /* Coordinator */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		1571E54223F9DBDA0002E279 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1571E54B23F9DD050002E279 /* SearchCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		1571E54323F9DBE40002E279 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1571E54923F9DC590002E279 /* SearchViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1571E54423F9DBE90002E279 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1571E54723F9DC080002E279 /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1571E54623F9DBF60002E279 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		15BC4FCA2397497400C0291F = {
 			isa = PBXGroup;
 			children = (
@@ -619,6 +667,7 @@
 			children = (
 				15BF99942399F1000005EB27 /* TabBar */,
 				15BF99952399F10A0005EB27 /* Home */,
+				1571E54123F9DBC20002E279 /* Search */,
 				1505C5C5239AA4080025D64E /* Favorites */,
 				15BF99962399F1100005EB27 /* Config */,
 			);
@@ -883,6 +932,7 @@
 				1505C5CA239AA4860025D64E /* FavoritesCoordinator.swift in Sources */,
 				15BC503623976CD200C0291F /* AlertManager.swift in Sources */,
 				1569A17623AC73B4007AECA6 /* NVActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
+				1571E54A23F9DC590002E279 /* SearchViewController.swift in Sources */,
 				152821C0239ED44D0063302E /* BaseService.swift in Sources */,
 				1579C0CB23E5F1A40036A715 /* MovieDetailViewController.swift in Sources */,
 				1569A16F23AC73B4007AECA6 /* NVActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
@@ -910,6 +960,7 @@
 				15BF99892399E8C00005EB27 /* BaseCoordinator.swift in Sources */,
 				1569A16823AC73B4007AECA6 /* NVActivityIndicatorAnimationDelegate.swift in Sources */,
 				15BC4FD72397497400C0291F /* AppDelegate.swift in Sources */,
+				1571E54823F9DC080002E279 /* SearchViewModel.swift in Sources */,
 				1569A1AF23AC7D07007AECA6 /* PKHUDSquareBaseView.swift in Sources */,
 				1569A16D23AC73B4007AECA6 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				15BC5023239766B600C0291F /* URL+Utils.swift in Sources */,
@@ -952,6 +1003,7 @@
 				15BF99A92399F88C0005EB27 /* HomeViewModel.swift in Sources */,
 				1569A17223AC73B4007AECA6 /* NVActivityIndicatorAnimationBallBeat.swift in Sources */,
 				1569A1B023AC7D07007AECA6 /* PKHUDErrorView.swift in Sources */,
+				1571E54C23F9DD050002E279 /* SearchCoordinator.swift in Sources */,
 				1569A17823AC73B4007AECA6 /* NVActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				15BC501F2397664400C0291F /* UITableView+Utils.swift in Sources */,
 				15BC503323976A6A00C0291F /* String+Utils.swift in Sources */,

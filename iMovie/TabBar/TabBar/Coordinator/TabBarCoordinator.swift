@@ -28,6 +28,7 @@ class TabBarCoordinator: BaseCoordinator {
     private var homeCoordinator: HomeCoordinator
     private var favoritesCoordinator: FavoritesCoordinator!
     private var configCoordinator: ConfigCoordinator!
+    private var searchCoordinator: SearchCoordinator!
     
     // Views
     
@@ -37,6 +38,7 @@ class TabBarCoordinator: BaseCoordinator {
         homeCoordinator = HomeCoordinator()
         favoritesCoordinator = FavoritesCoordinator()
         configCoordinator = ConfigCoordinator()
+        searchCoordinator = SearchCoordinator()
         
         tabBar = IMTabBarController()
     }
@@ -44,6 +46,7 @@ class TabBarCoordinator: BaseCoordinator {
     func start() {
         tabBar.viewControllers = [
             homeCoordinator.start(),
+            searchCoordinator.start(),
             favoritesCoordinator.start(),
             configCoordinator.start()
         ]
