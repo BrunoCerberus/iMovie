@@ -44,6 +44,7 @@ iMovie app, just an app for movies
 - [ ] Login
 - [ ] SignUp
 - [ ] Home
+- [ ] Search
 - [ ] Favorites
 - [ ] Profile
 - [ ] Movie Info
