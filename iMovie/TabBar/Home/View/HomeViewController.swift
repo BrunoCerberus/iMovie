@@ -21,6 +21,7 @@ final class HomeViewController: BaseViewController {
     
     init(viewModel: HomeViewModel) {
         super.init(nibName: nil, bundle: nil)
+        viewModel.viewDelegate = self
         self.viewModel = viewModel
         dispatchGroup = DispatchGroup()
         title = "Home"
@@ -60,31 +61,25 @@ final class HomeViewController: BaseViewController {
         homeCollection.register(MovieCell.self)
     }
     
-    private func requestAll(completion: CompletionSuccess? = nil) {
-        requestNowPlaying(completion)
-        requestTopRated(completion)
-        requestPopularMovies(completion)
+    private func requestAll() {
+        requestNowPlaying()
+        requestTopRated()
+        requestPopularMovies()
     }
     
-    private func requestNowPlaying(_ completion: CompletionSuccess? = nil) {
+    private func requestNowPlaying() {
         dispatchGroup.enter()
-        viewModel.requestNowPlaying {
-            self.dispatchGroup.leave()
-        }
+        viewModel.requestNowPlaying()
     }
     
-    private func requestTopRated(_ completion: CompletionSuccess? = nil) {
+    private func requestTopRated() {
         dispatchGroup.enter()
-        viewModel.requestTopRated {
-            self.dispatchGroup.leave()
-        }
+        viewModel.requestTopRated()
     }
     
-    private func requestPopularMovies(_ completion: CompletionSuccess? = nil) {
+    private func requestPopularMovies() {
         dispatchGroup.enter()
-        viewModel.requestPopular {
-            self.dispatchGroup.leave()
-        }
+        viewModel.requestPopular()
     }
     
     func showNetworkOperation(_ show: Bool) {
@@ -243,5 +238,19 @@ extension HomeViewController: UIScrollViewDelegate {
 extension HomeViewController: CarouselMovieDelegate {
     func didSelectMovie(_ carouselView: CarouselMovieCell, movie: Film?) {
         didSelectMovie(movie)
+    }
+}
+
+extension HomeViewController: HomeViewModelViewDelegate {
+    func homeViewModelDidFinishLoadNowPlaying(_ viewModel: HomeViewModel) {
+        dispatchGroup.leave()
+    }
+    
+    func homeViewModelDidFinishLoadTopRated(_ viewModel: HomeViewModel) {
+        dispatchGroup.leave()
+    }
+    
+    func homeViewModelDidFinishLoadPopular(_ viewModel: HomeViewModel) {
+        dispatchGroup.leave()
     }
 }

@@ -26,7 +26,7 @@ class HomeCoordinator: BaseCoordinator {
     
     func start() -> IMNavigationViewController {
         viewModel = HomeViewModel()
-        viewModel.delegate = self
+        viewModel.coordinatorDelegate = self
         view = HomeViewController(viewModel: viewModel)
         
         navigation = IMNavigationViewController(rootViewController: view!)
@@ -49,7 +49,7 @@ class HomeCoordinator: BaseCoordinator {
     }
 }
 
-extension HomeCoordinator: HomeViewModelDelegate {
+extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
     func homeViewModelDidSelectMovie(_ viewModel: HomeViewModel, movie: Film) {
         showMovieDetail(movie)
     }

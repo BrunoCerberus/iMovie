@@ -8,12 +8,20 @@
 
 import Foundation
 
-protocol HomeViewModelDelegate: AnyObject {
+protocol HomeViewModelCoordinatorDelegate: AnyObject {
     func homeViewModelDidSelectMovie(_ viewModel: HomeViewModel, movie: Film)
 }
 
+protocol HomeViewModelViewDelegate: AnyObject {
+    func homeViewModelDidFinishLoadNowPlaying(_ viewModel: HomeViewModel)
+    func homeViewModelDidFinishLoadTopRated(_ viewModel: HomeViewModel)
+    func homeViewModelDidFinishLoadPopular(_ viewModel: HomeViewModel)
+}
+
 class HomeViewModel {
-    weak var delegate: HomeViewModelDelegate?
+    weak var coordinatorDelegate: HomeViewModelCoordinatorDelegate?
+    weak var viewDelegate: HomeViewModelViewDelegate?
+    
     var homeService: HomeService!
     
     var nowPlayingMovies: [Film]?
@@ -24,28 +32,31 @@ class HomeViewModel {
         homeService = HomeService()
     }
     
-    func requestNowPlaying(_ completion: CompletionSuccess) {
+    func requestNowPlaying() {
         homeService.getNowPlaying(onSuccess: { [weak self] films in
-            self?.nowPlayingMovies = films
-            completion?()
+            guard let self = self else { return }
+            self.nowPlayingMovies = films
+            self.viewDelegate?.homeViewModelDidFinishLoadNowPlaying(self)
         }, onFail: { (error) in
             print(error)
         })
     }
     
-    func requestTopRated(_ completion: CompletionSuccess) {
+    func requestTopRated() {
         homeService.getTopRated(onSuccess: { [weak self] films in
-            self?.topRatedMovies = films
-            completion?()
+            guard let self = self else { return }
+            self.topRatedMovies = films
+            self.viewDelegate?.homeViewModelDidFinishLoadTopRated(self)
             }, onFail: { (error) in
                 print(error)
         })
     }
     
-    func requestPopular(_ completion: CompletionSuccess) {
+    func requestPopular() {
         homeService.getPopular(onSuccess: { [weak self] films in
-            self?.popularMovies = films
-            completion?()
+            guard let self = self else { return }
+            self.popularMovies = films
+            self.viewDelegate?.homeViewModelDidFinishLoadPopular(self)
             }, onFail: { (error) in
                 print(error)
         })
@@ -53,6 +64,6 @@ class HomeViewModel {
     
     func didSelectMovie(_ movie: Film?) {
         guard let movie = movie else { return }
-        delegate?.homeViewModelDidSelectMovie(self, movie: movie)
+        coordinatorDelegate?.homeViewModelDidSelectMovie(self, movie: movie)
     }
 }
