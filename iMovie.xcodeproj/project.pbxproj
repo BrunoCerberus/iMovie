@@ -19,7 +19,6 @@
 		152821A6239EAB590063302E /* IMConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152821A5239EAB590063302E /* IMConfig.swift */; };
 		152821A8239EAC0B0063302E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152821A7239EAC0B0063302E /* Reachability.swift */; };
 		152821AA239EAC5A0063302E /* Dictionary+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152821A9239EAC5A0063302E /* Dictionary+Utils.swift */; };
-		152821AC239EAD5F0063302E /* Request+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152821AB239EAD5F0063302E /* Request+Utils.swift */; };
 		152821B5239EB0A00063302E /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152821B4239EB0A00063302E /* HomeAPI.swift */; };
 		152821B7239EB0A70063302E /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152821B6239EB0A70063302E /* HomeService.swift */; };
 		152821B9239EB8D50063302E /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152821B8239EB8D50063302E /* Fetcher.swift */; };
@@ -97,8 +96,6 @@
 		15BC500C239761C800C0291F /* OHHTTPStubs.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15BC5000239761C800C0291F /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		15BC500D239761C800C0291F /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15BC5001239761C800C0291F /* Lottie.framework */; };
 		15BC500E239761C800C0291F /* Lottie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15BC5001239761C800C0291F /* Lottie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		15BC500F239761C800C0291F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15BC5002239761C800C0291F /* Alamofire.framework */; };
-		15BC5010239761C800C0291F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15BC5002239761C800C0291F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		15BC5011239761C800C0291F /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15BC5003239761C800C0291F /* IQKeyboardManager.framework */; };
 		15BC5012239761C800C0291F /* IQKeyboardManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15BC5003239761C800C0291F /* IQKeyboardManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		15BC501B239763F600C0291F /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BC501A239763F600C0291F /* UIColor+Utils.swift */; };
@@ -157,7 +154,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				15BC5006239761C800C0291F /* IQKeyboardManagerSwift.framework in Embed Frameworks */,
-				15BC5010239761C800C0291F /* Alamofire.framework in Embed Frameworks */,
 				15BC503A23976D3400C0291F /* SkeletonView.framework in Embed Frameworks */,
 				15BC500E239761C800C0291F /* Lottie.framework in Embed Frameworks */,
 				15BC500C239761C800C0291F /* OHHTTPStubs.framework in Embed Frameworks */,
@@ -182,7 +178,6 @@
 		152821A5239EAB590063302E /* IMConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMConfig.swift; sourceTree = "<group>"; };
 		152821A7239EAC0B0063302E /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		152821A9239EAC5A0063302E /* Dictionary+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Utils.swift"; sourceTree = "<group>"; };
-		152821AB239EAD5F0063302E /* Request+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Utils.swift"; sourceTree = "<group>"; };
 		152821B4239EB0A00063302E /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
 		152821B6239EB0A70063302E /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		152821B8239EB8D50063302E /* Fetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
@@ -261,7 +256,6 @@
 		15BC4FFF239761C800C0291F /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		15BC5000239761C800C0291F /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		15BC5001239761C800C0291F /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = "<group>"; };
-		15BC5002239761C800C0291F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		15BC5003239761C800C0291F /* IQKeyboardManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManager.framework; path = Carthage/Build/iOS/IQKeyboardManager.framework; sourceTree = "<group>"; };
 		15BC5004239761C800C0291F /* KingfisherSwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KingfisherSwiftUI.framework; path = Carthage/Build/iOS/KingfisherSwiftUI.framework; sourceTree = "<group>"; };
 		15BC501A239763F600C0291F /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
@@ -307,7 +301,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				15BC5005239761C800C0291F /* IQKeyboardManagerSwift.framework in Frameworks */,
-				15BC500F239761C800C0291F /* Alamofire.framework in Frameworks */,
 				15BC503923976D3400C0291F /* SkeletonView.framework in Frameworks */,
 				15BC500D239761C800C0291F /* Lottie.framework in Frameworks */,
 				15BC500B239761C800C0291F /* OHHTTPStubs.framework in Frameworks */,
@@ -559,7 +552,6 @@
 			children = (
 				15BC503723976D3400C0291F /* SkeletonView.framework */,
 				15BC503823976D3400C0291F /* SwiftMessages.framework */,
-				15BC5002239761C800C0291F /* Alamofire.framework */,
 				15BC5003239761C800C0291F /* IQKeyboardManager.framework */,
 				15BC4FFD239761C800C0291F /* IQKeyboardManagerSwift.framework */,
 				15BC4FFE239761C800C0291F /* KIF.framework */,
@@ -589,7 +581,6 @@
 				15BF998D2399EA270005EB27 /* UIBarButtonItem+Utils.swift */,
 				15BF99AC2399F9960005EB27 /* UIViewController+Utils.swift */,
 				152821A9239EAC5A0063302E /* Dictionary+Utils.swift */,
-				152821AB239EAD5F0063302E /* Request+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -939,7 +930,6 @@
 				1569A1A823AC7D07007AECA6 /* PKHUDTextView.swift in Sources */,
 				1569A17323AC73B4007AECA6 /* NVActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				1569A17023AC73B4007AECA6 /* NVActivityIndicatorAnimationBallScale.swift in Sources */,
-				152821AC239EAD5F0063302E /* Request+Utils.swift in Sources */,
 				15BF99AD2399F9960005EB27 /* UIViewController+Utils.swift in Sources */,
 				1569A16623AC73B4007AECA6 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
 				15BF99902399EA820005EB27 /* AppCoordinator.swift in Sources */,
