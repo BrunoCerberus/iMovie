@@ -10,7 +10,7 @@ import UIKit
 
 extension UIColor {
     
-    public static let imBackgroundComponent = UIColor(hex6: 0x26272C)
+    public static let imBackgroundComponent = UIColor(hex6: 0x242528)
     public static let imNavigationColor = UIColor(hex6: 0xF7CE5B)
     public static let imHUDIndicator = UIColor(hex6: 0xF7CE5B)
 

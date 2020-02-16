@@ -6,7 +6,7 @@
 //  Copyright © 2020 bruno. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class SearchViewController: BaseViewController {
     

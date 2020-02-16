@@ -81,7 +81,6 @@
 		1569A1AF23AC7D07007AECA6 /* PKHUDSquareBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569A19E23AC7D07007AECA6 /* PKHUDSquareBaseView.swift */; };
 		1569A1B023AC7D07007AECA6 /* PKHUDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1569A19F23AC7D07007AECA6 /* PKHUDErrorView.swift */; };
 		1571E54823F9DC080002E279 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1571E54723F9DC080002E279 /* SearchViewModel.swift */; };
-		1571E54A23F9DC590002E279 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1571E54923F9DC590002E279 /* SearchViewController.swift */; };
 		1571E54C23F9DD050002E279 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1571E54B23F9DD050002E279 /* SearchCoordinator.swift */; };
 		1579C0CB23E5F1A40036A715 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579C0C923E5F1A40036A715 /* MovieDetailViewController.swift */; };
 		1579C0CC23E5F1A40036A715 /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1579C0CA23E5F1A40036A715 /* MovieDetailViewController.xib */; };
@@ -132,6 +131,8 @@
 		15BF99AB2399F90C0005EB27 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BF99AA2399F90C0005EB27 /* BaseViewController.swift */; };
 		15BF99AD2399F9960005EB27 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BF99AC2399F9960005EB27 /* UIViewController+Utils.swift */; };
 		15BF99AF2399FDA40005EB27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15BF99AE2399FDA40005EB27 /* Assets.xcassets */; };
+		15E820F223F9EE04007AE417 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E820F023F9EE04007AE417 /* SearchViewController.swift */; };
+		15E820F323F9EE04007AE417 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15E820F123F9EE04007AE417 /* SearchViewController.xib */; };
 		15F5F79B23A0883C00909C2F /* CarouselMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F5F79923A0883C00909C2F /* CarouselMovieCell.swift */; };
 		15F5F79C23A0883C00909C2F /* CarouselMovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15F5F79A23A0883C00909C2F /* CarouselMovieCell.xib */; };
 		15F5F7A023A0912900909C2F /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15F5F79E23A0912900909C2F /* MovieCell.xib */; };
@@ -242,7 +243,6 @@
 		1569A19E23AC7D07007AECA6 /* PKHUDSquareBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSquareBaseView.swift; sourceTree = "<group>"; };
 		1569A19F23AC7D07007AECA6 /* PKHUDErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDErrorView.swift; sourceTree = "<group>"; };
 		1571E54723F9DC080002E279 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
-		1571E54923F9DC590002E279 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		1571E54B23F9DD050002E279 /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
 		1579C0C923E5F1A40036A715 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		1579C0CA23E5F1A40036A715 /* MovieDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailViewController.xib; sourceTree = "<group>"; };
@@ -292,6 +292,8 @@
 		15BF99AA2399F90C0005EB27 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		15BF99AC2399F9960005EB27 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		15BF99AE2399FDA40005EB27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		15E820F023F9EE04007AE417 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		15E820F123F9EE04007AE417 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		15F5F79923A0883C00909C2F /* CarouselMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselMovieCell.swift; sourceTree = "<group>"; };
 		15F5F79A23A0883C00909C2F /* CarouselMovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselMovieCell.xib; sourceTree = "<group>"; };
 		15F5F79D23A0912900909C2F /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
@@ -525,7 +527,8 @@
 		1571E54323F9DBE40002E279 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1571E54923F9DC590002E279 /* SearchViewController.swift */,
+				15E820F023F9EE04007AE417 /* SearchViewController.swift */,
+				15E820F123F9EE04007AE417 /* SearchViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -853,6 +856,7 @@
 				15BF99A62399F4F50005EB27 /* HomeViewController.xib in Resources */,
 				15F5F7A023A0912900909C2F /* MovieCell.xib in Resources */,
 				1505C5DF239AB2FC0025D64E /* FavoritesViewController.xib in Resources */,
+				15E820F323F9EE04007AE417 /* SearchViewController.xib in Resources */,
 				1505C5DB239AB2DB0025D64E /* ConfigViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -932,7 +936,6 @@
 				1505C5CA239AA4860025D64E /* FavoritesCoordinator.swift in Sources */,
 				15BC503623976CD200C0291F /* AlertManager.swift in Sources */,
 				1569A17623AC73B4007AECA6 /* NVActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
-				1571E54A23F9DC590002E279 /* SearchViewController.swift in Sources */,
 				152821C0239ED44D0063302E /* BaseService.swift in Sources */,
 				1579C0CB23E5F1A40036A715 /* MovieDetailViewController.swift in Sources */,
 				1569A16F23AC73B4007AECA6 /* NVActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
@@ -946,6 +949,7 @@
 				15BF99A12399F47F0005EB27 /* HomeCoordinator.swift in Sources */,
 				152821BE239ECB390063302E /* IMError.swift in Sources */,
 				1505C5D7239AB29B0025D64E /* ConfigViewModel.swift in Sources */,
+				15E820F223F9EE04007AE417 /* SearchViewController.swift in Sources */,
 				15BC4FE12397497400C0291F /* iMovie.xcdatamodeld in Sources */,
 				1569A17723AC73B4007AECA6 /* NVActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				1569A16E23AC73B4007AECA6 /* NVActivityIndicatorAnimationBallClipWithoutScaleRotate.swift in Sources */,
