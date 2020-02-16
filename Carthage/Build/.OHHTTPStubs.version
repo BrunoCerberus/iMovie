@@ -3,7 +3,7 @@
   "iOS" : [
     {
       "name" : "OHHTTPStubs",
-      "hash" : "725fbc04e014753080d6c0e31dcbcfb8f527c8cfb592bf7edfbced77acd264d9",
+      "hash" : "9cdea123942670ea5fd3ee30a5e4eb80401afe2c0bb2bdaccc03e93107b28dac",
       "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
     }
   ]
