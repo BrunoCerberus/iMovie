@@ -1,4 +1,8 @@
 <h1 align="center">
+<br>
+  <img src="screenshots/logo.png" width="300" alt="iMovie">
+<br>
+<br>
 iMovie app, just an app for movies
 </h1>
 
