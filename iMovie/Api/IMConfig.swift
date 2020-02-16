@@ -7,120 +7,121 @@
 //
 
 import Foundation
-import Alamofire
 
 typealias CompletionSuccess = (() -> Void)?
 
-#if RELEASE
-let debugRequests = false
-#else
-let debugRequests = true
-#endif
-
 class IMConfig<T: Fetcher> {
-    
-    let alamofireManager = Alamofire.SessionManager.default
     
     public func fetch<V: Codable>(target: T,
                                   dataType: V.Type,
-                                  completion: ((Result<V>, URLResponse?) -> Void)?) {
+                                  completion: ((Result<V, Error>, URLResponse?) -> Void)?) {
         
-        requestCodable(metodo: target.method,
-                       objeto: dataType,
-                       parametros: target.task?.dictionary() ?? [:],
-                       url: target.path,
-                       onSuccess: { response, result in
-                       completion?(.success(result), response)
-        }, onFail: { response, error in
-            completion?(.failure(error), response)
-        })
-    }
-    
-    private func requestCodable<T>(metodo: HTTPMethod,
-                                   objeto: T.Type,
-                                   parametros: [String: Any] = [:],
-                                   token: String = "",
-                                   url: String? = nil,
-                                   onSuccess: @escaping (_ response: HTTPURLResponse, _ objeto: T) -> Void,
-                                   onFail: @escaping (_ response: HTTPURLResponse?, _ error: Error) -> Void)
-        where T: Codable {
-            
-            if !Utils.isConnectedToNetwork() {
-                onFail(nil, IMError())
+        if !Reachability.isConnectedToNetwork() {
+            completion?(.failure(IMError.connection), nil)
+            return
+        }
+        
+        let url = API.baseUrl + target.path + "?api_key=\(API.ApiKey)"
+        let parameters = target.task?.dictionary() ?? [:]
+        let method = target.method
+        guard let urlRequest = URL(string: url) else {
+            completion?(.failure(IMError.generic), nil)
+            return
+        }
+        
+        var request = URLRequest(url: urlRequest)
+        request.httpMethod = method.rawValue
+        if !API.ApiKey.isEmpty {
+            request.addValue("\(API.ApiKey)", forHTTPHeaderField: "Authorization")
+        }
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let session = URLSession.shared
+        
+        if method == .POST {
+            guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else {
                 return
             }
-            
-            var parameters = parametros
-            var urlRequisicao = ""
-            
-            if debugRequests && metodo == .post {
-                print("\n\n===========JSON===========")
-                parametros.printJson()
+            request.httpBody = httpBody
+        }
+        
+        session.dataTask(with: request) { (dataRequest, response, error) in
+            self.debugResponse(request, dataRequest, response, error)
+            guard let data = dataRequest else {
+                completion?(.failure(IMError.generic), nil)
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = Date.FormatStyle.fullDateWithTimeZone.rawValue
+                decoder.dateDecodingStrategy = .formatted(dateFormatter)
+                let decodedResponse = try decoder.decode(dataType.self, from: data)
+                completion?(.success(decodedResponse), response)
+            } catch let error {
+                print("\n\n===========Error===========")
+                print("Error Code: \(error._code)")
+                print("Error Messsage: \(error.localizedDescription )")
+                debugPrint(error as Any)
                 print("===========================\n\n")
-            }
-            
-            if let url = url {
-                urlRequisicao = API.baseUrl + url
-            } else {
-                onFail(nil, IMError())
-                print("Ocorreu um erro, nenhum método padrão esta definido e nenhuma url personalizada esta definida")
+                completion?(.failure(IMError.parse), nil)
                 return
             }
-            
-            parameters["api_key"] = API.ApiKey
-            
-            let headers: HTTPHeaders = [
-                "Content-Type": "application/json"
-            ]
-            
-            var encoded: ParameterEncoding = JSONEncoding.default
-            
-            if metodo == .get {
-                encoded = URLEncoding.default
+        }.resume()
+    }
+}
+
+private extension IMConfig {
+    private func debugResponse(_ request: URLRequest,
+                               _ responseData: Data?,
+                               _ response: URLResponse?,
+                               _ error: Error?) {
+        let uuid = UUID().uuidString
+        print("\n↗️ ======= REQUEST =======")
+        print("↗️ REQUEST #: \(uuid)")
+        print("↗️ URL: \(request.url?.absoluteString ?? "")")
+        print("↗️ HTTP METHOD: \(request.httpMethod ?? "GET")")
+        
+        if let requestHeaders = request.allHTTPHeaderFields,
+            let requestHeadersData = try? JSONSerialization.data(withJSONObject: requestHeaders, options: .prettyPrinted),
+            let requestHeadersString = String(data: requestHeadersData, encoding: .utf8) {
+            print("↗️ HEADERS:\n\(requestHeadersString)")
+        }
+        
+        if let requestBodyData = request.httpBody,
+            let requestBody = String(data: requestBodyData, encoding: .utf8) {
+            print("↗️ BODY: \n\(requestBody)")
+        }
+        
+        if let httpResponse = response as? HTTPURLResponse {
+            print("\n↙️ ======= RESPONSE =======")
+            switch httpResponse.statusCode {
+            case 200...202:
+                print("↙️ CODE: \(httpResponse.statusCode) - ✅")
+            case 400...505:
+                print("↙️ CODE: \(httpResponse.statusCode) - 🆘")
+            default:
+                print("↙️ CODE: \(httpResponse.statusCode) - ✴️")
             }
             
-            Alamofire.request(urlRequisicao,
-                              method: metodo,
-                              parameters: parameters, encoding: encoded, headers: headers).debugLog()
-                .responseJSON { (response) in
-                    
-                    if debugRequests {
-                        print("""
-                            \n\nRequest: \(String(describing: response.request))
-                            \nParametros: \n\(parametros)
-                            \nTipo requisição:\(metodo)\n\n
-                            """)
-                        print(response)
-                    }
-                    
-                    switch response.result {
-                    case .success:
-                        
-                        do {
-                            let objeto = try JSONDecoder().decode(objeto.self, from: response.data!)
-                            onSuccess(response.response!, objeto)
-                        } catch let error {
-                            print("\n\n===========Error===========")
-                            print("Error Code: \(error._code)")
-                            print("Error Messsage: \(error.localizedDescription)")
-                            if let data = response.data, let str = String(data: data, encoding: String.Encoding.utf8) {
-                                print("Server Error: " + str)
-                            }
-                            debugPrint(error as Any)
-                            print("===========================\n\n")
-                        }
-                        
-                    case .failure(let error):
-                        print("\n\n===========Error===========")
-                        print("Error Code: \(error._code)")
-                        print("Error Messsage: \(error.localizedDescription)")
-                        if let data = response.data, let str = String(data: data, encoding: String.Encoding.utf8) {
-                            print("Server Error: " + str)
-                        }
-                        debugPrint(error as Any)
-                        print("===========================\n\n")
-                        onFail(response.response, IMError())
-                    }
+            if let responseHeadersData = try? JSONSerialization.data(withJSONObject: httpResponse.allHeaderFields, options: .prettyPrinted),
+                let responseHeadersString = String(data: responseHeadersData, encoding: .utf8) {
+                print("↙️ HEADERS:\n\(responseHeadersString)")
             }
+            
+            if let responseBodyData = responseData,
+                let responseBody =  String(data: responseBodyData, encoding: .utf8),
+                !responseBody.isEmpty {
+                
+                print("↙️ BODY:\n\(responseBody)\n")
+            }
+        }
+        
+        if let urlError = error as? URLError {
+            print("\n❌ ======= ERROR =======")
+            print("❌ CODE: \(urlError.errorCode)")
+            print("❌ DESCRIPTION: \(urlError.localizedDescription)\n")
+        }
+        
+        print("======== END OF: \(uuid) ========\n\n")
     }
 }

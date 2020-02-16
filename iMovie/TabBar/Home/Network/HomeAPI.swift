@@ -7,14 +7,11 @@
 //
 
 import Foundation
-import Alamofire
 
 enum HomeAPI {
     case nowPlaying
     case topRated
     case popular
-    
-    //case nowPlaying(Film) POST Sample
 }
 
 extension HomeAPI: Fetcher {
@@ -29,10 +26,10 @@ extension HomeAPI: Fetcher {
         }
     }
     
-    var method: HTTPMethod {
+    var method: HttpMethod {
         switch self {
         case .nowPlaying, .topRated, .popular:
-            return .get
+            return .GET
         }
     }
     
@@ -40,8 +37,6 @@ extension HomeAPI: Fetcher {
         switch self {
         case .nowPlaying, .topRated, .popular:
             return nil
-//        case .nowPlaying(let body): POST Sample
-//            return body
         }
     }
 }

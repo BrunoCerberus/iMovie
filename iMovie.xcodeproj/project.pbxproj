@@ -17,7 +17,7 @@
 		1505C5DF239AB2FC0025D64E /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1505C5DD239AB2FC0025D64E /* FavoritesViewController.xib */; };
 		15069CA823E52652007B8EED /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F5F79D23A0912900909C2F /* MovieCell.swift */; };
 		152821A6239EAB590063302E /* IMConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152821A5239EAB590063302E /* IMConfig.swift */; };
-		152821A8239EAC0B0063302E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152821A7239EAC0B0063302E /* Utils.swift */; };
+		152821A8239EAC0B0063302E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152821A7239EAC0B0063302E /* Reachability.swift */; };
 		152821AA239EAC5A0063302E /* Dictionary+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152821A9239EAC5A0063302E /* Dictionary+Utils.swift */; };
 		152821AC239EAD5F0063302E /* Request+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152821AB239EAD5F0063302E /* Request+Utils.swift */; };
 		152821B5239EB0A00063302E /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152821B4239EB0A00063302E /* HomeAPI.swift */; };
@@ -180,7 +180,7 @@
 		1505C5DC239AB2FC0025D64E /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		1505C5DD239AB2FC0025D64E /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
 		152821A5239EAB590063302E /* IMConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMConfig.swift; sourceTree = "<group>"; };
-		152821A7239EAC0B0063302E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		152821A7239EAC0B0063302E /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		152821A9239EAC5A0063302E /* Dictionary+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Utils.swift"; sourceTree = "<group>"; };
 		152821AB239EAD5F0063302E /* Request+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Utils.swift"; sourceTree = "<group>"; };
 		152821B4239EB0A00063302E /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
@@ -619,7 +619,7 @@
 				15BF998B2399E97D0005EB27 /* IMNavigationController.swift */,
 				15BF99912399EC3D0005EB27 /* IMTabBarController.swift */,
 				15BF99AA2399F90C0005EB27 /* BaseViewController.swift */,
-				152821A7239EAC0B0063302E /* Utils.swift */,
+				152821A7239EAC0B0063302E /* Reachability.swift */,
 				152821B8239EB8D50063302E /* Fetcher.swift */,
 				152821BD239ECB390063302E /* IMError.swift */,
 				1569A18C23AC7C38007AECA6 /* Device.swift */,
@@ -917,7 +917,7 @@
 				1569A17B23AC73B4007AECA6 /* NVActivityIndicatorAnimationBallPulse.swift in Sources */,
 				1569A1A723AC7D07007AECA6 /* PKHUDWideBaseView.swift in Sources */,
 				1569A1A123AC7D07007AECA6 /* PKHUDAnimation.swift in Sources */,
-				152821A8239EAC0B0063302E /* Utils.swift in Sources */,
+				152821A8239EAC0B0063302E /* Reachability.swift in Sources */,
 				1569A1A223AC7D07007AECA6 /* PKHUDAnimating.swift in Sources */,
 				15BC502B239767DB00C0291F /* Date+Utils.swift in Sources */,
 				1569A18623AC73B4007AECA6 /* NVActivityIndicatorAnimationCubeTransition.swift in Sources */,

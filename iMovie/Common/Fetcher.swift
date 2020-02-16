@@ -7,7 +7,14 @@
 //
 
 import Foundation
-import Alamofire
+
+/// HTTP Methods
+public enum HttpMethod: String {
+   case  GET
+   case  POST
+   case  DELETE
+   case  PUT
+}
 
 public protocol Fetcher {
     
@@ -15,7 +22,7 @@ public protocol Fetcher {
     var path: String { get }
     
     /// The HTTP method used in the request.
-    var method: HTTPMethod { get }
+    var method: HttpMethod { get }
     
     /// The task to be used in the request.
     var task: IMCodable? { get }
