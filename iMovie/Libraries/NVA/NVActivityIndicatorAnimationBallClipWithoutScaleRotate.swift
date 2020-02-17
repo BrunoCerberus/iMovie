@@ -1,9 +1,9 @@
 //
 //  NVActivityIndicatorAnimationBallClipWithoutScaleRotate.swift
-//  PSMyAccount
-//
-//  Created by Leandro Cissoto Ramos on 1/26/18.
-//  Copyright © 2018 PagSeguro. All rights reserved.
+//  iMovie
+
+//  Created by bruno on 05/12/19.
+//  Copyright © 2019 bruno. All rights reserved.
 //
 
 import UIKit
