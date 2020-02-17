@@ -54,6 +54,9 @@ final class HomeViewController: BaseViewController {
     private func registerCells() {
         homeCollection.register(CarouselMovieCell.self)
         homeCollection.register(MovieCell.self)
+        homeCollection.register(UINib(nibName: "SectionHeader", bundle: nil),
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: "SectionHeader")
     }
     
     private func requestAll() {
@@ -152,6 +155,41 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         if indexPath.section == HomeSections.popular.rawValue {
             guard let popularMovies = self.viewModel.popularMovies else { return }
             didSelectMovie(popularMovies[indexPath.row])
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        guard let section = HomeSections(rawValue: indexPath.section) else { return UICollectionReusableView() }
+        guard let sectionHeader = collectionView
+            .dequeueReusableSupplementaryView(ofKind: kind,
+                                              withReuseIdentifier: "SectionHeader",
+                                              for: indexPath) as? SectionHeader else { return UICollectionReusableView() }
+        
+        switch section {
+        case .topRated:
+            sectionHeader.sectionHeaderlabel.text = "Top Rated"
+            return sectionHeader
+        case .popular:
+            sectionHeader.sectionHeaderlabel.text = "Popular"
+            return sectionHeader
+        default:
+            return UICollectionReusableView()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForHeaderInSection section: Int) -> CGSize {
+        guard let section = HomeSections(rawValue: section) else { return .zero }
+        
+        switch section {
+        case .nowPlaying:
+            return .zero
+        default:
+            return CGSize(width: 60.0, height: 30.0)
         }
     }
 }
