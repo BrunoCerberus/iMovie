@@ -10,14 +10,13 @@ import UIKit
 
 class MovieDetailViewController: BaseViewController {
     
-    var movie: Film!
-    
-    private var anotherViewController: MovieDetailViewController!
+    var movie: Film?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = movie.title
+        title = movie?.title
+    
     }
     
     init(_ movie: Film) {
