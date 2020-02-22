@@ -52,10 +52,14 @@ class HomeViewModel {
         })
     }
     
-    func requestPopular() {
-        homeService.getPopular(onSuccess: { [weak self] films in
+    func requestPopular(in page: Int = 1) {
+        homeService.getPopular(with: page, onSuccess: { [weak self] films in
             guard let self = self else { return }
-            self.popularMovies = films
+            if page == 1 {
+                self.popularMovies = films
+            } else {
+                self.popularMovies?.append(contentsOf: films)
+            }
             self.viewDelegate?.homeViewModelDidFinishLoadPopular(self)
             }, onFail: { (error) in
                 print(error)

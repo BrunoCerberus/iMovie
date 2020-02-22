@@ -31,8 +31,8 @@ class HomeService: IMConfig<HomeAPI> {
         }
     }
     
-    func getPopular(onSuccess: @escaping ([Film]) -> Void, onFail: @escaping (String) -> Void) {
-        fetch(target: .popular, dataType: FilmsReturn.self) { (result, _) in
+    func getPopular(with page: Int = 1, onSuccess: @escaping ([Film]) -> Void, onFail: @escaping (String) -> Void) {
+        fetch(target: .popular(page: page), dataType: FilmsReturn.self) { (result, _) in
             switch result {
             case .success(let response):
                 onSuccess(response.data ?? [Film]())

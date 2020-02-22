@@ -21,7 +21,8 @@ class IMConfig<T: Fetcher> {
             return
         }
         
-        let url = API.baseUrl + target.path + "?api_key=\(API.ApiKey)"
+        let url = target.path.contains("?") ? API.baseUrl + target.path + "&api_key=\(API.ApiKey)"
+            : API.baseUrl + target.path + "?api_key=\(API.ApiKey)"
         let parameters = target.task?.dictionary() ?? [:]
         let method = target.method
         guard let urlRequest = URL(string: url) else {

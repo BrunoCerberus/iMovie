@@ -11,7 +11,7 @@ import Foundation
 enum HomeAPI {
     case nowPlaying
     case topRated
-    case popular
+    case popular(page: Int)
 }
 
 extension HomeAPI: Fetcher {
@@ -21,8 +21,8 @@ extension HomeAPI: Fetcher {
             return "/now_playing"
         case .topRated:
             return "/top_rated"
-        case .popular:
-            return "/popular"
+        case .popular(let page):
+            return "/popular?page=\(page)"
         }
     }
     

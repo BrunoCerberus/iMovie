@@ -84,6 +84,7 @@
 		1571E54C23F9DD050002E279 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1571E54B23F9DD050002E279 /* SearchCoordinator.swift */; };
 		1579C0CB23E5F1A40036A715 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579C0C923E5F1A40036A715 /* MovieDetailViewController.swift */; };
 		1579C0CC23E5F1A40036A715 /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1579C0CA23E5F1A40036A715 /* MovieDetailViewController.xib */; };
+		158E2E762401836C009801FE /* UIScrollView+BottomRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 158E2E752401836C009801FE /* UIScrollView+BottomRefreshControl.m */; };
 		159F213623976FF300C5626F /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159F213523976FF300C5626F /* Keyboard.swift */; };
 		15BC4FD72397497400C0291F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BC4FD62397497400C0291F /* AppDelegate.swift */; };
 		15BC4FE12397497400C0291F /* iMovie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15BC4FDF2397497400C0291F /* iMovie.xcdatamodeld */; };
@@ -248,6 +249,9 @@
 		1571E54B23F9DD050002E279 /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
 		1579C0C923E5F1A40036A715 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		1579C0CA23E5F1A40036A715 /* MovieDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailViewController.xib; sourceTree = "<group>"; };
+		158E2E7424018303009801FE /* iMovie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iMovie-Bridging-Header.h"; sourceTree = "<group>"; };
+		158E2E752401836C009801FE /* UIScrollView+BottomRefreshControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+BottomRefreshControl.m"; sourceTree = "<group>"; };
+		158E2E77240183CA009801FE /* UIScrollView+BottomRefreshControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+BottomRefreshControl.h"; sourceTree = "<group>"; };
 		159F213523976FF300C5626F /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		15BC4FD32397497400C0291F /* iMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15BC4FD62397497400C0291F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -586,6 +590,7 @@
 				15BC503423976CC200C0291F /* Managers */,
 				15BC50172397637100C0291F /* Extensions */,
 				1569A13D23AC7393007AECA6 /* Libraries */,
+				158E2E7424018303009801FE /* iMovie-Bridging-Header.h */,
 			);
 			path = iMovie;
 			sourceTree = "<group>";
@@ -667,6 +672,8 @@
 				1569A18C23AC7C38007AECA6 /* Device.swift */,
 				15D0075523FA48F70066C087 /* SectionHeader.swift */,
 				15D0075623FA48F70066C087 /* SectionHeader.xib */,
+				158E2E77240183CA009801FE /* UIScrollView+BottomRefreshControl.h */,
+				158E2E752401836C009801FE /* UIScrollView+BottomRefreshControl.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -936,6 +943,7 @@
 				1569A18123AC73B4007AECA6 /* NVActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				1569A1A623AC7D07007AECA6 /* PKHUDAssets.swift in Sources */,
 				15BC50212397669400C0291F /* UIApplication+Utils.swift in Sources */,
+				158E2E762401836C009801FE /* UIScrollView+BottomRefreshControl.m in Sources */,
 				15BC501D2397660400C0291F /* UICollectionView+Utils.swift in Sources */,
 				152821AA239EAC5A0063302E /* Dictionary+Utils.swift in Sources */,
 				1569A18423AC73B4007AECA6 /* NVActivityIndicatorAnimationPacman.swift in Sources */,
@@ -1194,6 +1202,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.brunolopes.iMovie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "iMovie/iMovie-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1219,6 +1228,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.brunolopes.iMovie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "iMovie/iMovie-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

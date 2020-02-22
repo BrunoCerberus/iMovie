@@ -17,6 +17,8 @@ final class HomeViewController: BaseViewController {
     private var viewModel: HomeViewModel!
     private var dispatchGroup: DispatchGroup!
     private var refreshControl: UIRefreshControl!
+    private var bottomRefreshControl: UIRefreshControl!
+    private var pageCount: Int = 1
     
     init(viewModel: HomeViewModel) {
         super.init(nibName: nil, bundle: nil)
@@ -82,9 +84,13 @@ final class HomeViewController: BaseViewController {
     
     private func addRefreshControl() {
         refreshControl = UIRefreshControl()
+        bottomRefreshControl = UIRefreshControl()
         refreshControl.tintColor = .white
+        bottomRefreshControl.tintColor = .white
         refreshControl.addTarget(self, action: #selector(refreshHome), for: .valueChanged)
+        bottomRefreshControl.addTarget(self, action: #selector(fetchMorePopularMovie), for: .valueChanged)
         homeCollection.refreshControl = refreshControl
+        homeCollection.bottomRefreshControl = bottomRefreshControl
     }
     
     @objc func refreshHome() {
@@ -94,6 +100,18 @@ final class HomeViewController: BaseViewController {
             DispatchQueue.main.async { [weak self] in
                 self?.view.hideHUD()
                 self?.refreshControl.endRefreshing()
+                self?.homeCollection.reloadData()
+            }
+        }
+    }
+    
+    @objc func fetchMorePopularMovie() {
+        dispatchGroup.enter()
+        viewModel.requestPopular(in: pageCount + 1)
+        dispatchGroup.notify(queue: .main) { [weak self] in
+            DispatchQueue.main.async { [weak self] in
+                self?.pageCount += 1
+                self?.bottomRefreshControl.endRefreshing()
                 self?.homeCollection.reloadData()
             }
         }
