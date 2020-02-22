@@ -222,7 +222,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         case .nowPlaying:
             return CGSize(width: collectionView.frame.width, height: 200)
         case .topRated:
-            return CGSize(width: collectionView.frame.width, height: 180)
+            return CGSize(width: collectionView.frame.width, height: 200)
         case .popular:
             return CGSize(width: (collectionView.frame.width - 30) / 3, height: 200)
         default:
