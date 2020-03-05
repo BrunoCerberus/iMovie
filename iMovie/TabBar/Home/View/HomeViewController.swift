@@ -188,10 +188,15 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         switch section {
         case .topRated:
-            sectionHeader.sectionHeaderlabel.text = "Top Rated"
+            if self.viewModel.hasLoaded {
+                sectionHeader.sectionHeaderlabel.text = "Top Rated"
+            }
+            
             return sectionHeader
         case .popular:
-            sectionHeader.sectionHeaderlabel.text = "Popular"
+            if self.viewModel.hasLoaded {
+                sectionHeader.sectionHeaderlabel.text = "Popular"
+            }
             return sectionHeader
         default:
             return UICollectionReusableView()

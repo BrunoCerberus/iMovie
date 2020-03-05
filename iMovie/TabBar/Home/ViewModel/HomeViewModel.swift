@@ -28,6 +28,12 @@ class HomeViewModel {
     var topRatedMovies: [Film]?
     var popularMovies: [Film]?
     
+    var hasLoaded: Bool {
+        return nowPlayingMovies?.count ?? 0 > 0
+            && topRatedMovies?.count ?? 0 > 0
+            && popularMovies?.count ?? 0 > 0
+    }
+    
     init() {
         homeService = HomeService()
     }
