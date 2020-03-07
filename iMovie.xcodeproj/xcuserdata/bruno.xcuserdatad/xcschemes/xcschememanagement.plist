@@ -7,7 +7,40 @@
 		<key>iMovie.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>iMovieTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>iMovieUITests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>15BC4FD22397497400C0291F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>15BC4FEB2397497500C0291F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>15F04ADE241344DB0043167E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>15F04AEC241345C30043167E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

@@ -94,8 +94,6 @@
 		15BC5006239761C800C0291F /* IQKeyboardManagerSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15BC4FFD239761C800C0291F /* IQKeyboardManagerSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		15BC5009239761C800C0291F /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15BC4FFF239761C800C0291F /* Kingfisher.framework */; };
 		15BC500A239761C800C0291F /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15BC4FFF239761C800C0291F /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		15BC500B239761C800C0291F /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15BC5000239761C800C0291F /* OHHTTPStubs.framework */; };
-		15BC500C239761C800C0291F /* OHHTTPStubs.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15BC5000239761C800C0291F /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		15BC500D239761C800C0291F /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15BC5001239761C800C0291F /* Lottie.framework */; };
 		15BC500E239761C800C0291F /* Lottie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15BC5001239761C800C0291F /* Lottie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		15BC5011239761C800C0291F /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15BC5003239761C800C0291F /* IQKeyboardManager.framework */; };
@@ -113,8 +111,6 @@
 		15BC502F2397688F00C0291F /* UITabBarController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BC502E2397688F00C0291F /* UITabBarController+Utils.swift */; };
 		15BC503323976A6A00C0291F /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BC503223976A6A00C0291F /* String+Utils.swift */; };
 		15BC503623976CD200C0291F /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BC503523976CD200C0291F /* AlertManager.swift */; };
-		15BC503923976D3400C0291F /* SkeletonView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15BC503723976D3400C0291F /* SkeletonView.framework */; };
-		15BC503A23976D3400C0291F /* SkeletonView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15BC503723976D3400C0291F /* SkeletonView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		15BC503B23976D3400C0291F /* SwiftMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15BC503823976D3400C0291F /* SwiftMessages.framework */; };
 		15BC503C23976D3400C0291F /* SwiftMessages.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15BC503823976D3400C0291F /* SwiftMessages.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		15BF99892399E8C00005EB27 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BF99882399E8C00005EB27 /* BaseCoordinator.swift */; };
@@ -136,6 +132,20 @@
 		15D0075823FA48F70066C087 /* SectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15D0075623FA48F70066C087 /* SectionHeader.xib */; };
 		15E820F223F9EE04007AE417 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E820F023F9EE04007AE417 /* SearchViewController.swift */; };
 		15E820F323F9EE04007AE417 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15E820F123F9EE04007AE417 /* SearchViewController.xib */; };
+		15F04ACB24133FFF0043167E /* OneSignal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F04ACA24133FFF0043167E /* OneSignal.framework */; };
+		15F04ACC24133FFF0043167E /* OneSignal.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15F04ACA24133FFF0043167E /* OneSignal.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		15F04ACE241340060043167E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F04ACD241340060043167E /* RxCocoa.framework */; };
+		15F04ACF241340060043167E /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15F04ACD241340060043167E /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		15F04AD12413400A0043167E /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F04AD02413400A0043167E /* RxRelay.framework */; };
+		15F04AD22413400A0043167E /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15F04AD02413400A0043167E /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		15F04AD42413400F0043167E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F04AD32413400F0043167E /* RxSwift.framework */; };
+		15F04AD52413400F0043167E /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15F04AD32413400F0043167E /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		15F04B03241346900043167E /* IntegrationTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F04AFC2413468F0043167E /* IntegrationTestCase.swift */; };
+		15F04B04241346900043167E /* IdentifierViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F04AFD2413468F0043167E /* IdentifierViewProtocol.swift */; };
+		15F04B05241346900043167E /* StubsNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F04AFF2413468F0043167E /* StubsNetworking.swift */; };
+		15F04B06241346900043167E /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 15F04B012413468F0043167E /* empty.json */; };
+		15F04B0B241349A70043167E /* KIF.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15BC4FFE239761C800C0291F /* KIF.framework */; };
+		15F04B0D24134B8C0043167E /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15BC5000239761C800C0291F /* OHHTTPStubs.framework */; };
 		15F5F79B23A0883C00909C2F /* CarouselMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F5F79923A0883C00909C2F /* CarouselMovieCell.swift */; };
 		15F5F79C23A0883C00909C2F /* CarouselMovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15F5F79A23A0883C00909C2F /* CarouselMovieCell.xib */; };
 		15F5F7A023A0912900909C2F /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15F5F79E23A0912900909C2F /* MovieCell.xib */; };
@@ -143,6 +153,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		15BC4FED2397497500C0291F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15BC4FCB2397497400C0291F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15BC4FD22397497400C0291F;
+			remoteInfo = iMovie;
+		};
+		15F04AF2241345C30043167E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 15BC4FCB2397497400C0291F /* Project object */;
 			proxyType = 1;
@@ -158,13 +175,15 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				15F04ACF241340060043167E /* RxCocoa.framework in Embed Frameworks */,
 				15BC5006239761C800C0291F /* IQKeyboardManagerSwift.framework in Embed Frameworks */,
-				15BC503A23976D3400C0291F /* SkeletonView.framework in Embed Frameworks */,
 				15BC500E239761C800C0291F /* Lottie.framework in Embed Frameworks */,
-				15BC500C239761C800C0291F /* OHHTTPStubs.framework in Embed Frameworks */,
+				15F04AD22413400A0043167E /* RxRelay.framework in Embed Frameworks */,
 				15BC503C23976D3400C0291F /* SwiftMessages.framework in Embed Frameworks */,
+				15F04AD52413400F0043167E /* RxSwift.framework in Embed Frameworks */,
 				15BC500A239761C800C0291F /* Kingfisher.framework in Embed Frameworks */,
 				15BC5012239761C800C0291F /* IQKeyboardManager.framework in Embed Frameworks */,
+				15F04ACC24133FFF0043167E /* OneSignal.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +321,17 @@
 		15D0075623FA48F70066C087 /* SectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeader.xib; sourceTree = "<group>"; };
 		15E820F023F9EE04007AE417 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		15E820F123F9EE04007AE417 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		15F04ACA24133FFF0043167E /* OneSignal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OneSignal.framework; path = Carthage/Build/iOS/OneSignal.framework; sourceTree = "<group>"; };
+		15F04ACD241340060043167E /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		15F04AD02413400A0043167E /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
+		15F04AD32413400F0043167E /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		15F04AD6241343020043167E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		15F04AED241345C30043167E /* iMovieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMovieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		15F04AFC2413468F0043167E /* IntegrationTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegrationTestCase.swift; sourceTree = "<group>"; };
+		15F04AFD2413468F0043167E /* IdentifierViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifierViewProtocol.swift; sourceTree = "<group>"; };
+		15F04AFF2413468F0043167E /* StubsNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubsNetworking.swift; sourceTree = "<group>"; };
+		15F04B012413468F0043167E /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
+		15F04B09241349230043167E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15F5F79923A0883C00909C2F /* CarouselMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselMovieCell.swift; sourceTree = "<group>"; };
 		15F5F79A23A0883C00909C2F /* CarouselMovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselMovieCell.xib; sourceTree = "<group>"; };
 		15F5F79D23A0912900909C2F /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
@@ -313,13 +343,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15F04ACE241340060043167E /* RxCocoa.framework in Frameworks */,
 				15BC5005239761C800C0291F /* IQKeyboardManagerSwift.framework in Frameworks */,
-				15BC503923976D3400C0291F /* SkeletonView.framework in Frameworks */,
 				15BC500D239761C800C0291F /* Lottie.framework in Frameworks */,
-				15BC500B239761C800C0291F /* OHHTTPStubs.framework in Frameworks */,
+				15F04AD12413400A0043167E /* RxRelay.framework in Frameworks */,
 				15BC503B23976D3400C0291F /* SwiftMessages.framework in Frameworks */,
+				15F04AD42413400F0043167E /* RxSwift.framework in Frameworks */,
 				15BC5009239761C800C0291F /* Kingfisher.framework in Frameworks */,
 				15BC5011239761C800C0291F /* IQKeyboardManager.framework in Frameworks */,
+				15F04ACB24133FFF0043167E /* OneSignal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +359,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15F04AEA241345C30043167E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15F04B0B241349A70043167E /* KIF.framework in Frameworks */,
+				15F04B0D24134B8C0043167E /* OHHTTPStubs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +602,7 @@
 			children = (
 				15BC4FD52397497400C0291F /* iMovie */,
 				15BC4FEF2397497500C0291F /* iMovieTests */,
+				15F04AEE241345C30043167E /* iMovieUITests */,
 				15BC4FD42397497400C0291F /* Products */,
 				15BC4FFC239761C800C0291F /* Frameworks */,
 			);
@@ -571,6 +613,7 @@
 			children = (
 				15BC4FD32397497400C0291F /* iMovie.app */,
 				15BC4FEC2397497500C0291F /* iMovieTests.xctest */,
+				15F04AED241345C30043167E /* iMovieUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -607,6 +650,11 @@
 		15BC4FFC239761C800C0291F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				15F04AD6241343020043167E /* XCTest.framework */,
+				15F04AD32413400F0043167E /* RxSwift.framework */,
+				15F04AD02413400A0043167E /* RxRelay.framework */,
+				15F04ACD241340060043167E /* RxCocoa.framework */,
+				15F04ACA24133FFF0043167E /* OneSignal.framework */,
 				15BC503723976D3400C0291F /* SkeletonView.framework */,
 				15BC503823976D3400C0291F /* SwiftMessages.framework */,
 				15BC5003239761C800C0291F /* IQKeyboardManager.framework */,
@@ -766,6 +814,42 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		15F04AEE241345C30043167E /* iMovieUITests */ = {
+			isa = PBXGroup;
+			children = (
+				15F04B09241349230043167E /* Info.plist */,
+				15F04AFB2413468F0043167E /* Common */,
+			);
+			path = iMovieUITests;
+			sourceTree = "<group>";
+		};
+		15F04AFB2413468F0043167E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				15F04AFC2413468F0043167E /* IntegrationTestCase.swift */,
+				15F04AFD2413468F0043167E /* IdentifierViewProtocol.swift */,
+				15F04AFE2413468F0043167E /* StubsForUITesting */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		15F04AFE2413468F0043167E /* StubsForUITesting */ = {
+			isa = PBXGroup;
+			children = (
+				15F04AFF2413468F0043167E /* StubsNetworking.swift */,
+				15F04B002413468F0043167E /* Responses */,
+			);
+			path = StubsForUITesting;
+			sourceTree = "<group>";
+		};
+		15F04B002413468F0043167E /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				15F04B012413468F0043167E /* empty.json */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
 		15F5F79823A0880D00909C2F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -818,13 +902,32 @@
 			productReference = 15BC4FEC2397497500C0291F /* iMovieTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		15F04AEC241345C30043167E /* iMovieUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15F04AF4241345C30043167E /* Build configuration list for PBXNativeTarget "iMovieUITests" */;
+			buildPhases = (
+				15F04AE9241345C30043167E /* Sources */,
+				15F04AEA241345C30043167E /* Frameworks */,
+				15F04AEB241345C30043167E /* Resources */,
+				15F04B082413487C0043167E /* Carthage */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				15F04AF3241345C30043167E /* PBXTargetDependency */,
+			);
+			name = iMovieUITests;
+			productName = iMovieUITests;
+			productReference = 15F04AED241345C30043167E /* iMovieUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		15BC4FCB2397497400C0291F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1110;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = bruno;
 				TargetAttributes = {
@@ -833,6 +936,10 @@
 					};
 					15BC4FEB2397497500C0291F = {
 						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 15BC4FD22397497400C0291F;
+					};
+					15F04AEC241345C30043167E = {
+						CreatedOnToolsVersion = 11.3.1;
 						TestTargetID = 15BC4FD22397497400C0291F;
 					};
 				};
@@ -852,6 +959,7 @@
 			targets = (
 				15BC4FD22397497400C0291F /* iMovie */,
 				15BC4FEB2397497500C0291F /* iMovieTests */,
+				15F04AEC241345C30043167E /* iMovieUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -879,6 +987,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15F04AEB241345C30043167E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15F04B06241346900043167E /* empty.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -912,6 +1028,26 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		15F04B082413487C0043167E /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/KIF.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/OHHTTPStubs.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
@@ -1046,6 +1182,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		15F04AE9241345C30043167E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15F04B03241346900043167E /* IntegrationTestCase.swift in Sources */,
+				15F04B04241346900043167E /* IdentifierViewProtocol.swift in Sources */,
+				15F04B05241346900043167E /* StubsNetworking.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1053,6 +1199,11 @@
 			isa = PBXTargetDependency;
 			target = 15BC4FD22397497400C0291F /* iMovie */;
 			targetProxy = 15BC4FED2397497500C0291F /* PBXContainerItemProxy */;
+		};
+		15F04AF3241345C30043167E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 15BC4FD22397497400C0291F /* iMovie */;
+			targetProxy = 15F04AF2241345C30043167E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1278,6 +1429,56 @@
 			};
 			name = Release;
 		};
+		15F04AF5241345C30043167E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RDTR6557FX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = iMovieUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.brunolopes.iMovieUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iMovie.app/iMovie";
+			};
+			name = Debug;
+		};
+		15F04AF6241345C30043167E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RDTR6557FX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = iMovieUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.brunolopes.iMovieUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iMovie.app/iMovie";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1304,6 +1505,15 @@
 			buildConfigurations = (
 				15BC4FF92397497500C0291F /* Debug */,
 				15BC4FFA2397497500C0291F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15F04AF4241345C30043167E /* Build configuration list for PBXNativeTarget "iMovieUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15F04AF5241345C30043167E /* Debug */,
+				15F04AF6241345C30043167E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
