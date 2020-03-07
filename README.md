@@ -22,7 +22,6 @@ iMovie app, just an app for movies
 - [ ] UI Tests (Kif)
 - [x] Network layer
 - [x] TMDb Api (The Movie Database)
-- [ ] Skeleton
 - [ ] Infinite Scrolling
 - [x] Pull-To-Refresh
 - [x] Grand Central Dispatch (GCD)
