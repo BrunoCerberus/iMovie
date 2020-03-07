@@ -22,7 +22,7 @@ iMovie app, just an app for movies
 - [ ] UI Tests (Kif)
 - [x] Network layer
 - [x] TMDb Api (The Movie Database)
-- [ ] Infinite Scrolling
+- [x] Infinite Scrolling
 - [x] Pull-To-Refresh
 - [x] Grand Central Dispatch (GCD)
 - [x] Image Cache (Kingfisher)
