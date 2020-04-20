@@ -58,4 +58,8 @@ class BaseViewController: UIViewController {
                                  message: message)
         alert.show()
     }
+    
+    deinit {
+        print("deinit: \(self)")
+    }
 }
